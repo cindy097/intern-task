@@ -9,6 +9,7 @@
   <!-- Ionicons -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  
 </head>
 
 <body class="bg-[#f4f4f4] text-gray-800 font-sans overflow-x-hidden">
@@ -20,9 +21,9 @@
       </button>
       <h1 class="font-bold text-xl text-black">TASTY FOOD</h1>
       <ul class="hidden md:flex space-x-6 text-sm font-medium text-black">
-        <li><a href="#" class="hover:text-gray-500">HOME</a></li>
-        <li><a href="#" class="hover:text-gray-500">TENTANG</a></li>
-        <li><a href="#" class="hover:text-gray-500">BERITA</a></li>
+        <li><a href="{{ url('/') }}" class="hover:text-gray-500">HOME</a></li>
+        <li><a href="{{ route('tentang') }}" class="hover:text-gray-500">TENTANG</a></li>
+        <li><a href="{{ route('berita') }}" class="hover:text-gray-500">BERITA</a></li>
         <li><a href="#" class="hover:text-gray-500">GALERI</a></li>
         <li><a href="#" class="hover:text-gray-500">KONTAK</a></li>
       </ul>
@@ -38,9 +39,9 @@
       </button>
     </div>
     <div class="flex flex-col p-6 space-y-4">
-      <a href="#" class="text-base hover:text-gray-500">HOME</a>
-      <a href="#" class="text-base hover:text-gray-500">TENTANG</a>
-      <a href="#" class="text-base hover:text-gray-500">BERITA</a>
+      <a href="{{ url('/') }}" class="text-base hover:text-gray-500">HOME</a>
+      <a href="{{ route('tentang') }}" class="hover:text-gray-500">TENTANG</a>
+      <a href="{{ route('berita') }}" class="text-base hover:text-gray-500">BERITA</a>
       <a href="#" class="text-base hover:text-gray-500">GALERI</a>
       <a href="#" class="text-base hover:text-gray-500">KONTAK</a>
     </div>
@@ -265,7 +266,7 @@
       <h3 class="font-semibold text-lg mb-4">Contact Info</h3>
       <div class="space-y-4 text-sm">
         <div class="flex items-center gap-2">
-          <img src="img/mail.png" class="w-4 h-4" alt="email">
+          <img src="img/mail.png" class="w-4" alt="email">
           <span>tastyfood@gmail.com</span>
         </div>
         <div class="flex items-center gap-2">
@@ -273,7 +274,7 @@
           <span>+62 812 3456 7890</span>
         </div>
         <div class="flex items-center gap-2">
-          <img src="img/loc.png" class="w-4 h-4" alt="location">
+          <img src="img/loc.png" class="w-3" alt="location">
           <span>Kota Bandung, Jawa Barat</span>
         </div>
       </div>
