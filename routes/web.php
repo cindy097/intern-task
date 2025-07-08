@@ -13,3 +13,7 @@ Route::get('/tentang', function () {
 Route::get('/berita', function () {
     return view('berita');
 })->name('berita');
+
+Route::get('/galeri', function () {
+    return view('galeri');
+})->name('galeri');

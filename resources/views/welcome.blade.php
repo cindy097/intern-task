@@ -24,7 +24,7 @@
         <li><a href="{{ url('/') }}" class="hover:text-gray-500">HOME</a></li>
         <li><a href="{{ route('tentang') }}" class="hover:text-gray-500">TENTANG</a></li>
         <li><a href="{{ route('berita') }}" class="hover:text-gray-500">BERITA</a></li>
-        <li><a href="#" class="hover:text-gray-500">GALERI</a></li>
+        <li><a href="{{ route('galeri') }}" class="hover:text-gray-500">GALERI</a></li>
         <li><a href="#" class="hover:text-gray-500">KONTAK</a></li>
       </ul>
     </div>
@@ -42,7 +42,7 @@
       <a href="{{ url('/') }}" class="text-base hover:text-gray-500">HOME</a>
       <a href="{{ route('tentang') }}" class="hover:text-gray-500">TENTANG</a>
       <a href="{{ route('berita') }}" class="text-base hover:text-gray-500">BERITA</a>
-      <a href="#" class="text-base hover:text-gray-500">GALERI</a>
+      <a href="{{ route('galeri') }}" class="text-base hover:text-gray-500">GALERI</a>
       <a href="#" class="text-base hover:text-gray-500">KONTAK</a>
     </div>
   </div>
