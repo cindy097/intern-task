@@ -17,3 +17,7 @@ Route::get('/berita', function () {
 Route::get('/galeri', function () {
     return view('galeri');
 })->name('galeri');
+
+Route::get('/kontak', function () {
+    return view('kontak');
+})->name('kontak');

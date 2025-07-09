@@ -28,7 +28,7 @@
         <li><a href="{{ route('tentang') }}" class="hover:text-gray-300">TENTANG</a></li>
         <li><a href="{{ route('berita') }}" class="hover:text-gray-300">BERITA</a></li>
         <li><a href="{{ route('galeri') }}" class="hover:text-gray-300">GALERI</a></li>
-        <li><a href="#" class="hover:text-gray-300">KONTAK</a></li>
+        <li><a href="{{ route('kontak') }}" class="hover:text-gray-300">KONTAK</a></li>
       </ul>
     </div>
   </nav>
@@ -46,7 +46,7 @@
       <a href="{{ route('tentang') }}" class="hover:text-gray-600">TENTANG</a>
       <a href="{{ route('berita') }}" class="hover:text-gray-600">BERITA</a>
       <a href="{{ route('galeri') }}" class="hover:text-gray-600">GALERI</a>
-      <a href="#" class="hover:text-gray-600">KONTAK</a>
+      <a href="{{ route('kontak') }}" class="hover:text-gray-600">KONTAK</a>
     </div>
   </div>
 
@@ -110,6 +110,122 @@
       menu.classList.toggle('-translate-x-full');
     }
   </script>
+
+<section id="galeri" class="bg-white py-12 px-4">
+  <div class="max-w-5xl mx-auto">
+    <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
+      <!-- Gambar 1 -->
+      <div class="aspect-square rounded-xl overflow-hidden shadow hover:scale-105 transition-transform duration-300">
+        <img src="/img/g1.jpg" alt="Makanan 1" class="w-full h-full object-cover" />
+      </div>
+      <!-- Gambar 2 -->
+      <div class="aspect-square rounded-xl overflow-hidden shadow hover:scale-105 transition-transform duration-300">
+        <img src="/img/slideshow3.jpg" alt="Makanan 2" class="w-full h-full object-cover" />
+      </div>
+      <!-- Gambar 3 -->
+      <div class="aspect-square rounded-xl overflow-hidden shadow hover:scale-105 transition-transform duration-300">
+        <img src="/img/g3.jpg" alt="Makanan 3" class="w-full h-full object-cover" />
+      </div>
+      <!-- Gambar 4 -->
+      <div class="aspect-square rounded-xl overflow-hidden shadow hover:scale-105 transition-transform duration-300">
+        <img src="/img/g4.jpg" alt="Makanan 4" class="w-full h-full object-cover" />
+      </div>
+      <!-- Gambar 5 -->
+      <div class="aspect-square rounded-xl overflow-hidden shadow hover:scale-105 transition-transform duration-300">
+        <img src="/img/gallery1.jpg" alt="Makanan 5" class="w-full h-full object-cover" />
+      </div>
+      <!-- Gambar 6 -->
+      <div class="aspect-square rounded-xl overflow-hidden shadow hover:scale-105 transition-transform duration-300">
+        <img src="/img/gallery3.jpg" alt="Makanan 6" class="w-full h-full object-cover" />
+      </div>
+      <!-- Gambar 7 -->
+      <div class="aspect-square rounded-xl overflow-hidden shadow hover:scale-105 transition-transform duration-300">
+        <img src="/img/berita_utama.jpg" alt="Makanan 7" class="w-full h-full object-cover" />
+      </div>
+      <!-- Gambar 8 -->
+      <div class="aspect-square rounded-xl overflow-hidden shadow hover:scale-105 transition-transform duration-300">
+        <img src="/img/berita_mini3.jpg" alt="Makanan 8" class="w-full h-full object-cover" />
+      </div>
+      <!-- Gambar 9 -->
+      <div class="aspect-square rounded-xl overflow-hidden shadow hover:scale-105 transition-transform duration-300">
+        <img src="/img/berita_mini4.jpg" alt="Makanan 9" class="w-full h-full object-cover" />
+      </div>
+      <!-- Gambar 10 -->
+      <div class="aspect-square rounded-xl overflow-hidden shadow hover:scale-105 transition-transform duration-300">
+        <img src="/img/berita_mini2.jpg" alt="Makanan 10" class="w-full h-full object-cover" />
+      </div>
+      <!-- Gambar 11 -->
+      <div class="aspect-square rounded-xl overflow-hidden shadow hover:scale-105 transition-transform duration-300">
+        <img src="/img/berita_mini1.jpg" alt="Makanan 11" class="w-full h-full object-cover" />
+      </div>
+      <!-- Gambar 12 -->
+      <div class="aspect-square rounded-xl overflow-hidden shadow hover:scale-105 transition-transform duration-300">
+        <img src="/img/gallery6.jpg" alt="Makanan 12" class="w-full h-full object-cover" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-black text-white px-6 md:px-20 pt-16 pb-10">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
+    
+    <!-- Logo dan deskripsi -->
+    <div>
+      <h2 class="text-2xl font-bold mb-4">Tasty Food</h2>
+      <p class="text-sm mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+      <div class="flex gap-4">
+        <img src="img/fb_logo.png" alt="Facebook" class="w-6 h-6 hover:scale-110 transition-transform duration-200">
+        <img src="img/twt_logo.png" alt="Twitter" class="w-6 h-6 hover:scale-110 transition-transform duration-200">
+      </div>
+    </div>
+
+    <!-- Useful Links -->
+    <div>
+      <h3 class="font-semibold text-lg mb-4">Useful links</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="#" class="hover:underline">Blog</a></li>
+        <li><a href="#" class="hover:underline">Hewan</a></li>
+        <li><a href="#" class="hover:underline">Galeri</a></li>
+        <li><a href="#" class="hover:underline">Testimonial</a></li>
+      </ul>
+    </div>
+
+    <!-- Privacy -->
+    <div>
+      <h3 class="font-semibold text-lg mb-4">Privacy</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="#" class="hover:underline">Karir</a></li>
+        <li><a href="#" class="hover:underline">Tentang Kami</a></li>
+        <li><a href="#" class="hover:underline">Kontak Kami</a></li>
+        <li><a href="#" class="hover:underline">Servis</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div>
+      <h3 class="font-semibold text-lg mb-4">Contact Info</h3>
+      <div class="space-y-4 text-sm">
+        <div class="flex items-center gap-2">
+          <img src="img/mail.png" class="w-4" alt="email">
+          <span>tastyfood@gmail.com</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <img src="img/call.png" class="w-4 h-4" alt="phone">
+          <span>+62 812 3456 7890</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <img src="img/loc.png" class="w-3" alt="location">
+          <span>Kota Bandung, Jawa Barat</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center text-sm text-gray-400 mt-12">
+    Copyright &copy; 2023 All rights reserved
+  </div>
+</footer>
 
 </body>
 </html>
