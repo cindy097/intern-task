@@ -14,50 +14,51 @@
 
 <body class="bg-white text-white font-sans overflow-x-hidden">
 
-  <!-- Navbar -->
-  <nav class="absolute top-0 left-0 w-full z-50 px-[50px] py-6">
-    <div class="flex justify-between items-center">
-      <!-- Logo -->
-      <h1 class="font-bold text-xl text-white">TASTY FOOD</h1>
+ <!-- Navbar -->
+<nav class="absolute top-0 left-0 w-full z-50 py-6">
+  <div class="max-w-7xl mx-auto px-4 md:px-10 flex justify-between items-center">
+    <!-- Logo -->
+    <h1 class="font-bold text-xl text-white">TASTY FOOD</h1>
 
-      <!-- Hamburger (mobile only) -->
-      <button onclick="toggleMenu()" class="text-3xl md:hidden text-white">
-        <ion-icon name="menu-outline"></ion-icon>
-      </button>
+    <!-- Hamburger (mobile only) -->
+    <button onclick="toggleMenu()" class="text-3xl md:hidden text-white">
+      <ion-icon name="menu-outline"></ion-icon>
+    </button>
 
-      <!-- Menu Desktop -->
-      <ul class="hidden md:flex space-x-6 text-sm font-medium text-white">
-        <li><a href="{{ url('/') }}" class="hover:text-gray-300">HOME</a></li>
-        <li><a href="{{ route('tentang') }}" class="hover:text-gray-300">TENTANG</a></li>
-        <li><a href="{{ route('berita') }}" class="hover:text-gray-300">BERITA</a></li>
-        <li><a href="{{ route('galeri') }}" class="hover:text-gray-300">GALERI</a></li>
-        <li><a href="{{ route('kontak') }}" class="hover:text-gray-300">KONTAK</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- Sidebar Mobile -->
-  <div id="mobileMenu" class="fixed top-0 left-0 h-full w-64 bg-white/95 backdrop-blur-md shadow-lg transform -translate-x-full transition-transform duration-300 ease-in-out z-50 md:hidden flex flex-col text-black">
-    <div class="flex justify-between items-center px-6 py-4 border-b">
-      <h2 class="font-bold text-lg">MENU</h2>
-      <button onclick="toggleMenu()" class="text-2xl">
-        <ion-icon name="close-outline"></ion-icon>
-      </button>
-    </div>
-    <div class="flex flex-col p-6 space-y-4">
-      <a href="{{ url('/') }}" class="hover:text-gray-600">HOME</a>
-      <a href="{{ route('tentang') }}" class="hover:text-gray-600">TENTANG</a>
-      <a href="{{ route('berita') }}" class="hover:text-gray-600">BERITA</a>
-      <a href="{{ route('galeri') }}" class="hover:text-gray-600">GALERI</a>
-      <a href="{{ route('kontak') }}" class="hover:text-gray-600">KONTAK</a>
-    </div>
+    <!-- Menu Desktop -->
+    <ul class="hidden md:flex space-x-6 text-sm font-medium text-white">
+      <li><a href="{{ url('/') }}" class="hover:text-gray-300">HOME</a></li>
+      <li><a href="{{ route('tentang') }}" class="hover:text-gray-300">TENTANG</a></li>
+      <li><a href="{{ route('berita') }}" class="hover:text-gray-300">BERITA</a></li>
+      <li><a href="{{ route('galeri') }}" class="hover:text-gray-300">GALERI</a></li>
+      <li><a href="{{ route('kontak') }}" class="hover:text-gray-300">KONTAK</a></li>
+    </ul>
   </div>
+</nav>
 
-  <!-- Hero / Jumbotron -->
-<section class="h-[550px] bg-cover bg-center relative flex items-end px-8 pb-20"
-           style="background-image: url('{{ asset('img/bg-card.png') }}');">
-    <h1 class="text-2xl md:text-5xl mb-[180px] font-extrabold uppercase">berita kami</h1>
-  </section>
+<!-- Sidebar Mobile -->
+<div id="mobileMenu" class="fixed top-0 left-0 h-full w-64 bg-white/95 backdrop-blur-md shadow-lg transform -translate-x-full transition-transform duration-300 ease-in-out z-50 md:hidden flex flex-col text-black">
+  <div class="flex justify-between items-center px-6 py-4 border-b">
+    <h2 class="font-bold text-lg">MENU</h2>
+    <button onclick="toggleMenu()" class="text-2xl">
+      <ion-icon name="close-outline"></ion-icon>
+    </button>
+  </div>
+  <div class="flex flex-col p-6 space-y-4">
+    <a href="{{ url('/') }}" class="hover:text-gray-600">HOME</a>
+    <a href="{{ route('tentang') }}" class="hover:text-gray-600">TENTANG</a>
+    <a href="{{ route('berita') }}" class="hover:text-gray-600">BERITA</a>
+    <a href="{{ route('galeri') }}" class="hover:text-gray-600">GALERI</a>
+    <a href="{{ route('kontak') }}" class="hover:text-gray-600">KONTAK</a>
+  </div>
+</div>
+
+<!-- Hero / Jumbotron -->
+<section class="h-[550px] bg-cover bg-center relative flex items-end pb-20" style="background-image: url('{{ asset('img/bg-card.png') }}');">
+  <div class="max-w-7xl mx-auto w-full px-4 md:px-10">
+    <h1 class="text-2xl md:text-5xl mb-[180px] font-extrabold uppercase">BERITA KAMI</h1>
+  </div>
+</section>
 
     <!-- SCRIPT -->
   <script>
@@ -68,16 +69,16 @@
   </script>
 
   <!-- berita utama -->
- <section class="bg-[#f4f4f4] py-20 px-4 sm:px-6 md:px-10 lg:px-20">
+ <section class="bg-[#f4f4f4] py-20 px-4 md:px-10">
   <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-10 group">
 
     <!-- Gambar -->
-    <div class="overflow-hidden rounded-xl shadow-lg  lg:max-w-[400px] transform transition-transform duration-500 group-hover:scale-105">
+    <div class="overflow-hidden rounded-xl shadow-lg  lg:max-w-[400px]">
     <img src="{{ asset('img/gallery3.jpg') }}" alt="Salad Nusantara"
      class="
         w-[350px] aspect-square
         sm:w-[300px]
-        md:w-[450px]
+        md:w-[700px]
         lg:w-[360px]
         xl:w-[400px]
         object-cover rounded-xl
@@ -101,7 +102,7 @@
   </div>
 </section>
 
-<section class="py-20 px-4 sm:px-6 md:px-10 bg-white">
+<section class="py-20 px-4 md:px-10 bg-white">
   <div class="max-w-7xl mx-auto">
     <h2 class="text-2xl font-bold text-gray-900 mb-8">BERITA LAINNYA</h2>
 
@@ -197,7 +198,7 @@
   </div>
 </section>
 
-<footer class="bg-black text-white px-6 md:px-20 pt-16 pb-10">
+<footer class="bg-black text-white px-4 md:px-10 pt-16 pb-10">
   <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
     
     <!-- Logo dan deskripsi -->
