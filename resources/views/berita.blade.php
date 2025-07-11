@@ -16,7 +16,7 @@
 
  <!-- Navbar -->
 <nav class="absolute top-0 left-0 w-full z-50 py-6">
-  <div class="max-w-7xl mx-auto px-4 md:px-10 flex justify-between items-center">
+  <div class="max-w-7xl mx-auto px-4 md:px-10 lg:px-10 xl:px-10 flex justify-between items-center">
     <!-- Logo -->
     <h1 class="font-bold text-xl text-white">TASTY FOOD</h1>
 
@@ -55,7 +55,7 @@
 
 <!-- Hero / Jumbotron -->
 <section class="h-[550px] bg-cover bg-center relative flex items-end pb-20" style="background-image: url('{{ asset('img/bg-card.png') }}');">
-  <div class="max-w-7xl mx-auto w-full px-4 md:px-10">
+  <div class="max-w-7xl mx-auto w-full px-4 md:px-10 lg:px-10">
     <h1 class="text-2xl md:text-5xl mb-[180px] font-extrabold uppercase">BERITA KAMI</h1>
   </div>
 </section>
@@ -69,7 +69,7 @@
   </script>
 
   <!-- berita utama -->
- <section class="bg-[#f4f4f4] py-20 px-4 md:px-10">
+ <section class="bg-[#f4f4f4] py-20 px-4 md:px-10 lg:px-10 xl:px-10">
   <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-10 group">
 
     <!-- Gambar -->
@@ -102,7 +102,7 @@
   </div>
 </section>
 
-<section class="py-20 px-4 md:px-10 bg-white">
+<section class="py-20 px-4 md:px-10 lg:px-10 xl:px-10 bg-white">
   <div class="max-w-7xl mx-auto">
     <h2 class="text-2xl font-bold text-gray-900 mb-8">BERITA LAINNYA</h2>
 
@@ -198,7 +198,7 @@
   </div>
 </section>
 
-<footer class="bg-black text-white px-4 md:px-10 pt-16 pb-10">
+<footer class="bg-black text-white px-4 md:px-10 lg:px-10 xl:px-10 pt-16 pb-10">
   <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
     
     <!-- Logo dan deskripsi -->

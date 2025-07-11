@@ -18,7 +18,7 @@
 
  <!-- Navbar -->
 <nav class="absolute top-0 left-0 w-full z-50 py-6">
-  <div class="max-w-7xl mx-auto px-4 md:px-10 flex justify-between items-center">
+  <div class="max-w-7xl mx-auto px-4 md:px-10 lg:px-10 xl:px-10 flex justify-between items-center">
     <!-- Logo -->
     <h1 class="font-bold text-xl text-white">TASTY FOOD</h1>
 
@@ -57,7 +57,7 @@
 
 <!-- Hero / Jumbotron -->
 <section class="h-[550px] bg-cover bg-center relative flex items-end pb-20" style="background-image: url('{{ asset('img/bg-card.png') }}');">
-  <div class="max-w-7xl mx-auto w-full px-4 md:px-10">
+  <div class="max-w-7xl mx-auto w-full px-4 md:px-10 lg:px-10 xl:px-10">
     <h1 class="text-2xl md:text-5xl mb-[180px] font-extrabold uppercase">GALERI KAMI</h1>
   </div>
 </section>
@@ -65,27 +65,27 @@
 
 <!-- Swiper Section -->
 <section class="py-12 bg-[#f4f4f4]">
-  <div class="max-w-7xl mx-auto px-4 md:px-11">
-    <div class="swiper myGallery relative">
+  <div class="max-w-7xl mx-auto px-4 md:px-10 lg:px-10 xl:px-10">
+    <div class="swiper myGallery relative rounded-xl">
       <div class="swiper-wrapper">
 
         <!-- Slide 1 -->
         <div class="swiper-slide">
-          <div class="rounded-xl overflow-hidden aspect-square sm:aspect-[4/3] md:aspect-[3/2] lg:aspect-[16/7]">
+          <div class="overflow-hidden aspect-square sm:aspect-[4/3] md:aspect-[3/2] lg:aspect-[16/7]">
             <img src="/img/gallery2.jpg" class="w-full h-full object-cover" alt="Slide 1">
           </div>
         </div>
 
         <!-- Slide 2 -->
         <div class="swiper-slide">
-          <div class="rounded-xl overflow-hidden aspect-square sm:aspect-[4/3] md:aspect-[3/2] lg:aspect-[16/7]">
+          <div class="overflow-hidden aspect-square sm:aspect-[4/3] md:aspect-[3/2] lg:aspect-[16/7]">
             <img src="/img/berita_mini4.jpg" class="w-full h-full object-cover" alt="Slide 2">
           </div>
         </div>
 
         <!-- Slide 3 -->
         <div class="swiper-slide">
-          <div class="rounded-xl overflow-hidden aspect-square sm:aspect-[4/3] md:aspect-[3/2] lg:aspect-[16/7]">
+          <div class="overflow-hidden aspect-square sm:aspect-[4/3] md:aspect-[3/2] lg:aspect-[16/7]">
             <img src="/img/slideshow3.jpg" class="w-full h-full object-cover" alt="Slide 3">
           </div>
         </div>
@@ -133,7 +133,7 @@
 
 <!-- Galeri Kecil -->
 <section id="galeri" class="bg-white py-12">
-  <div class="max-w-7xl mx-auto px-4 md:px-10">
+  <div class="max-w-7xl mx-auto px-4 md:px-10 lg:px-10 xl:px-10">
     <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
       <!-- Gambar 1 -->
       <div class="aspect-square rounded-xl overflow-hidden shadow hover:scale-105 transition-transform duration-300">
@@ -187,7 +187,7 @@
   </div>
 </section>
 
-<footer class="bg-black text-white px-4 md:px-10 pt-16 pb-10">
+<footer class="bg-black text-white px-4 md:px-10 lg:px-10 xl:px-10 pt-16 pb-10">
   <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
     
     <!-- Logo dan deskripsi -->

@@ -14,7 +14,7 @@
 
 <body class="bg-[#f4f4f4] text-gray-800 font-sans overflow-x-hidden">
  <!-- Navbar -->
-<nav class="absolute top-0 left-0 w-full z-50 bg-transparent px-4 sm:px-6 md:px-10 lg:px-10 py-6">
+<nav class="absolute top-0 left-0 w-full z-50 bg-transparent px-4 md:px-10 lg:px-10 xl:px-10 py-6">
   <div class="flex items-center space-x-6">
     <button onclick="toggleMenu()" class="text-3xl md:hidden text-black">
       <ion-icon name="menu-outline"></ion-icon>
@@ -49,11 +49,11 @@
 </div>
 
 <!-- Jumbotron -->
-<section class="relative min-h-[665px] overflow-hidden px-4 sm:px-6 md:px-10 lg:px-10 pt-[130px]">
+<section class="relative min-h-[665px] overflow-hidden px-4 md:px-10 lg:px-10 xl:px-10 pt-[130px]">
   <img src="{{ asset('img/1.png') }}" alt="Healthy Food"
        class="absolute z-0 pointer-events-none transition-all duration-500 ease-in-out
               w-[140px] top-8 right-[20px]
-              sm:w-[180px] sm:top-2 sm:left-[60px]
+              sm:w-[180px] sm:top-[-85] sm:right-[60px]
               md:w-[355px] md:top-[-85px] md:right-[-100px] md:left-auto
               lg:w-[500px] lg:top-[-100px] lg:right-[-120px] lg:left-auto
               xl:w-[650px] xl:top-[-145px] xl:right-[-140px] xl:left-auto">
@@ -64,7 +64,7 @@
     <p class="text-base leading-relaxed text-gray-600 mt-4">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate ex quaerat modi nam consectetur voluptatum, expedita nesciunt, culpa ipsum tempora inventore?
     </p>
-    <a href="#" class="inline-block bg-black text-white px-6 py-2 mt-6 text-sm hover:bg-gray-800 transition-all">
+    <a href="{{ route('tentang') }}" class="inline-block bg-black text-white px-6 py-2 mt-6 text-sm hover:bg-gray-800 transition-all">
       TENTANG KAMI
     </a>
   </div>
@@ -72,7 +72,7 @@
 
 
   <!-- Tentang Kami -->
-  <section class="bg-white py-20 px-4 sm:px-6 md:px-8">
+  <section class="bg-white py-20 px-4 md:px-10 lg:px-10">
     <div class="max-w-3xl mx-auto text-center">
       <h2 class="text-3xl font-bold mb-4">TENTANG KAMI</h2>
       <p class="text-gray-600 mb-6">
@@ -83,7 +83,7 @@
   </section>
 
 <!-- Card Makanan -->
-<section class="bg-cover bg-center py-24 px-4 sm:px-6 md:px-10" style="background-image: url('img/bg-card.png');">
+<section class="bg-cover bg-center py-24 px-4 md:px-10 lg:px-10 xl:px-10 " style="background-image: url('img/bg-card.png');">
   <div class="max-w-7xl mx-auto">
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10 sm:gap-y-16">
       
@@ -120,7 +120,7 @@
 
 
 <!-- Section Berita -->
-<section class="py-20 px-4 sm:px-6 md:px-10 lg:px-10 bg-[#f4f4f4]">
+<section class="py-20 px-4 md:px-10 lg:px-10 xl:px-10 bg-[#f4f4f4]">
   <div class="max-w-7xl mx-auto">
     <h2 class="text-3xl font-bold mb-8 text-center">BERITA TERBARU</h2>
 
@@ -148,7 +148,7 @@
         <div class="bg-white rounded-2xl shadow-xl hover:scale-105 transition-transform duration-300 overflow-hidden">
           <img src="img/berita_mini1.jpg" alt="Berita 2" class="w-full h-[120px] object-cover">
           <div class="p-3 sm:p-4">
-            <h4 class="text-sm font-bold mb-1 uppercase">Judul Mini 1</h4>
+            <h4 class="text-sm font-bold mb-1 uppercase">lorem ipsum</h4>
             <p class="text-gray-600 text-xs leading-snug mb-1">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
             <a href="#" class="text-xs text-yellow-500 hover:text-yellow-600 hover:underline active:scale-95 transition-all">Baca selengkapnya</a>
           </div>
@@ -158,7 +158,7 @@
         <div class="bg-white rounded-2xl shadow-xl hover:scale-105 transition-transform duration-300 overflow-hidden">
           <img src="img/berita_mini2.jpg" alt="Berita 3" class="w-full h-[120px] object-cover">
           <div class="p-3 sm:p-4">
-            <h4 class="text-sm font-bold mb-1 uppercase">Judul Mini 2</h4>
+            <h4 class="text-sm font-bold mb-1 uppercase">lorem ipsum</h4>
             <p class="text-gray-600 text-xs leading-snug mb-1">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
             <a href="#" class="text-xs text-yellow-500 hover:text-yellow-600 hover:underline active:scale-95 transition-all">Baca selengkapnya</a>
           </div>
@@ -168,7 +168,7 @@
         <div class="bg-white rounded-2xl shadow-xl hover:scale-105 transition-transform duration-300 overflow-hidden">
           <img src="img/berita_mini3.jpg" alt="Berita 4" class="w-full h-[120px] object-cover">
           <div class="p-3 sm:p-4">
-            <h4 class="text-sm font-bold mb-1 uppercase">Judul Mini 3</h4>
+            <h4 class="text-sm font-bold mb-1 uppercase">lorem ipsum</h4>
             <p class="text-gray-600 text-xs leading-snug mb-1">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
             <a href="#" class="text-xs text-yellow-500 hover:text-yellow-600 hover:underline active:scale-95 transition-all">Baca selengkapnya</a>
           </div>
@@ -178,7 +178,7 @@
         <div class="bg-white rounded-2xl shadow-xl hover:scale-105 transition-transform duration-300 overflow-hidden">
           <img src="img/berita_mini4.jpg" alt="Berita 5" class="w-full h-[120px] object-cover">
           <div class="p-3 sm:p-4">
-            <h4 class="text-sm font-bold mb-1 uppercase">Judul Mini 4</h4>
+            <h4 class="text-sm font-bold mb-1 uppercase">lorem ipsum</h4>
             <p class="text-gray-600 text-xs leading-snug mb-1">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
             <a href="#" class="text-xs text-yellow-500 hover:text-yellow-600 hover:underline active:scale-95 transition-all">Baca selengkapnya</a>
           </div>
@@ -189,7 +189,7 @@
 </section>
 
 <!-- Galeri Section -->
-<section class="py-20 px-4 sm:px-6 md:px-10 lg:px-10 bg-white">
+<section class="py-20 px-4 md:px-10 lg:px-10 xl:px-10 bg-white">
   <h2 class="text-3xl font-bold text-center mb-12">GALERI KAMI</h2>
   
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
@@ -231,11 +231,11 @@
   </div>
 
   <div class="text-center mt-10">
-    <a href="#" class="inline-block px-8 py-3 bg-black text-white font-semibold hover:scale-105 transition-transform">LIHAT LEBIH BANYAK</a>
+    <a href="{{ route('galeri') }}" class="inline-block px-8 py-3 bg-black text-white font-semibold hover:scale-105 transition-transform">LIHAT LEBIH BANYAK</a>
   </div>
 </section>
 
-<footer class="bg-black text-white px-4 md:px-10 pt-16 pb-10">
+<footer class="bg-black text-white px-4 md:px-10 lg:px-10 xl:px-10 pt-16 pb-10">
   <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
     
     <!-- Logo dan deskripsi -->
