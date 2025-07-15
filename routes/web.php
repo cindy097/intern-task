@@ -1,37 +1,44 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/tentang', function () {
-    return view('tentang');
-})->name('tentang');
-
-Route::get('/berita', function () {
-    return view('berita');
-})->name('berita');
-
-Route::get('/galeri', function () {
-    return view('galeri');
-})->name('galeri');
-
-Route::get('/kontak', function () {
-    return view('kontak');
-})->name('kontak');
-
-Route::get('/admin/dashboard', function () {
-    return view('admin.dashboard');
-});
-
 use App\Http\Controllers\AuthController;
 
-Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login')->middleware('guest');
+/*
+|--------------------------------------------------------------------------
+| Public Routes (User)
+|--------------------------------------------------------------------------
+*/
+Route::view('/', 'welcome');
+Route::view('/tentang', 'tentang')->name('tentang');
+Route::view('/berita', 'berita')->name('berita');
+Route::view('/galeri', 'galeri')->name('galeri');
+Route::view('/kontak', 'kontak')->name('kontak');
+
+/*
+|--------------------------------------------------------------------------
+| Auth Routes (Login/Register/Logout)
+|--------------------------------------------------------------------------
+*/
+
+// ✅ Hapus middleware guest agar bisa diakses siapa saja
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
 
-Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register')->middleware('guest');
+Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register');
 Route::post('/register', [AuthController::class, 'register']);
 
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
+
+/*
+|--------------------------------------------------------------------------
+| Admin Routes (Only for authenticated users)
+|--------------------------------------------------------------------------
+*/
+Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
+    Route::view('/dashboard', 'admin.dashboard')->name('dashboard');
+
+    Route::view('/berita', 'admin.berita.index')->name('berita.index');
+    Route::view('/galeri', 'admin.galeri.index')->name('galeri.index');
+    Route::view('/kontak', 'admin.kontak.index')->name('kontak.index');
+    Route::view('/informasi', 'admin.informasi.index')->name('informasi.index');
+});

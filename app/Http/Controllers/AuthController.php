@@ -13,16 +13,17 @@ class AuthController extends Controller
         return view('auth.login');
     }
 
-    public function login(Request $request) {
-        $credentials = $request->only('email', 'password');
+public function login(Request $request)
+{
+    $credentials = $request->only('email', 'password');
+    $remember = $request->has('remember'); // true kalau dicentang
 
-        if (Auth::attempt($credentials)) {
-            $request->session()->regenerate();
-            return redirect()->intended('/admin/dashboard');
-        }
-
-        return back()->with('error', 'Email atau password salah.');
+    if (Auth::attempt($credentials, $remember)) {
+        return redirect()->intended('/admin/dashboard');
     }
+
+    return back()->with('error', 'Email atau password salah')->withInput();
+}
 
     public function showRegisterForm() {
         return view('auth.register');
