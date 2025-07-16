@@ -1,31 +1,69 @@
-<nav class="flex flex-col gap-1 p-4 text-sm font-medium text-gray-700">
-  <a href="{{ route('admin/dashboard') }}" class="flex items-center gap-3 py-2 px-3 rounded hover:bg-red-50 transition-all {{ request()->is('admin/dashboard') ? 'bg-red-100 text-red-600 font-semibold' : '' }}">
-    <ion-icon name="home-outline" class="text-lg"></ion-icon>
-    Dashboard
-  </a>
 
-  <a href="#" class="flex items-center gap-3 py-2 px-3 rounded hover:bg-red-50 transition-all {{ request()->is('admin/berita*') ? 'bg-red-100 text-red-600 font-semibold' : '' }}">
-    <ion-icon name="newspaper-outline" class="text-lg"></ion-icon>
-    Berita
-  </a>
 
-  <a href="#" class="flex items-center gap-3 py-2 px-3 rounded hover:bg-red-50 transition-all {{ request()->is('admin/galeri*') ? 'bg-red-100 text-red-600 font-semibold' : '' }}">
-    <ion-icon name="images-outline" class="text-lg"></ion-icon>
-    Galeri
-  </a>
+<!-- Sidebar -->
+<aside id="sidebar"
+  class="fixed md:static top-0 left-0 h-full w-64 bg-white border-r z-50 transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out flex flex-col justify-between overflow-y-auto">
 
-  <a href="#" class="flex items-center gap-3 py-2 px-3 rounded hover:bg-red-50 transition-all {{ request()->is('admin/galeri*') ? 'bg-red-100 text-red-600 font-semibold' : '' }}">
-    <ion-icon name="file-tray-stacked-outline" class="text-lg"></ion-icon>
-    Galeri
-  </a>
+  <!-- Sidebar Content -->
+  <div>
+    <div class="px-6 py-4 text-xl font-bold border-b">Tasty Food</div>
+    <nav class="flex flex-col gap-1 p-4 text-sm">
+      <a href="/admin/dashboard" class="flex items-center gap-2 py-2 px-3 rounded hover:bg-gray-100">
+        <ion-icon name="grid-outline" class="text-lg"></ion-icon>
+        Dashboard
+      </a>
+      <a href="/admin/berita" class="flex items-center gap-2 py-2 px-3 rounded hover:bg-gray-100">
+        <ion-icon name="newspaper-outline" class="text-lg"></ion-icon>
+        Berita
+      </a>
+      <a href="/admin/kategori" class="flex items-center gap-2 py-2 px-3 rounded hover:bg-gray-100">
+        <ion-icon name="pricetags-outline" class="text-lg"></ion-icon>
+        Kategori
+      </a>
+      <a href="/admin/galeri" class="flex items-center gap-2 py-2 px-3 rounded hover:bg-gray-100">
+        <ion-icon name="images-outline" class="text-lg"></ion-icon>
+        Galeri
+      </a>
+      <a href="/admin/kontak" class="flex items-center gap-2 py-2 px-3 rounded hover:bg-gray-100">
+        <ion-icon name="call-outline" class="text-lg"></ion-icon>
+        Kontak
+      </a>
+    </nav>
+  </div>
 
-  <a href="#" class="flex items-center gap-3 py-2 px-3 rounded hover:bg-red-50 transition-all {{ request()->is('admin/kontak*') ? 'bg-red-100 text-red-600 font-semibold' : '' }}">
-    <ion-icon name="mail-outline" class="text-lg"></ion-icon>
-    Kontak Masuk
-  </a>
+  <!-- Logout -->
+  <div class="p-4 border-t text-sm">
+    <form action="/logout" method="POST">
+      @csrf
+      <button class="flex items-center gap-2 text-red-500 hover:underline">
+        <ion-icon name="log-out-outline" class="text-lg"></ion-icon>
+        Logout
+      </button>
+    </form>
+  </div>
+</aside>
 
-  <a href="#" class="flex items-center gap-3 py-2 px-3 rounded hover:bg-red-50 transition-all {{ request()->is('admin/kontak*') ? 'bg-red-100 text-red-600 font-semibold' : '' }}">
-    <ion-icon name="call-outline" class="text-lg"></ion-icon>
-    Informasi Kontak
-  </a>
-</nav>
+
+    <!-- Overlay -->
+    <div onclick="toggleSidebar()" id="sidebarOverlay"
+      class="fixed inset-0 bg-black/40 z-40 hidden md:hidden"></div>
+
+        <!-- Toggle Sidebar Script -->
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      const overlay = document.getElementById('sidebarOverlay');
+
+      const isOpen = sidebar.classList.contains('translate-x-0');
+
+      if (isOpen) {
+        sidebar.classList.remove('translate-x-0');
+        sidebar.classList.add('-translate-x-full');
+        overlay.classList.add('hidden');
+      } else {
+        sidebar.classList.remove('-translate-x-full');
+        sidebar.classList.add('translate-x-0');
+        overlay.classList.remove('hidden');
+      }
+    }
+     </script>
