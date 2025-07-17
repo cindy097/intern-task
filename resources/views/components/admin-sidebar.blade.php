@@ -8,25 +8,29 @@
   <div>
     <div class="px-6 py-4 text-xl font-bold border-b">Tasty Food</div>
     <nav class="flex flex-col gap-1 p-4 text-sm">
-      <a href="/admin/dashboard" class="flex items-center gap-2 py-2 px-3 rounded hover:bg-gray-100">
+      <a href="{{ route('admin.dashboard') }}" class="flex items-center gap-2 py-2 px-3 rounded hover:bg-gray-100">
         <ion-icon name="grid-outline" class="text-lg"></ion-icon>
         Dashboard
       </a>
-      <a href="/admin/berita" class="flex items-center gap-2 py-2 px-3 rounded hover:bg-gray-100">
+      <a href="{{ route('admin.news.index') }}" class="flex items-center gap-2 py-2 px-3 rounded hover:bg-gray-100">
         <ion-icon name="newspaper-outline" class="text-lg"></ion-icon>
         Berita
       </a>
-      <a href="/admin/kategori" class="flex items-center gap-2 py-2 px-3 rounded hover:bg-gray-100">
+      <a href="{{ route('admin.categories.index') }}" class="flex items-center gap-2 py-2 px-3 rounded hover:bg-gray-100">
         <ion-icon name="pricetags-outline" class="text-lg"></ion-icon>
         Kategori
       </a>
-      <a href="/admin/galeri" class="flex items-center gap-2 py-2 px-3 rounded hover:bg-gray-100">
+      <a href="{{ route('admin.galleries.index') }}" class="flex items-center gap-2 py-2 px-3 rounded hover:bg-gray-100">
         <ion-icon name="images-outline" class="text-lg"></ion-icon>
         Galeri
       </a>
       <a href="/admin/kontak" class="flex items-center gap-2 py-2 px-3 rounded hover:bg-gray-100">
+        <ion-icon name="mail-outline" class="text-lg"></ion-icon>
+        Kontak Masuk
+      </a>
+      <a href="/admin/kontak" class="flex items-center gap-2 py-2 px-3 rounded hover:bg-gray-100">
         <ion-icon name="call-outline" class="text-lg"></ion-icon>
-        Kontak
+        Informasi Kontak
       </a>
     </nav>
   </div>

@@ -9,26 +9,26 @@
   <div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
     
     <!--berita-->
-    <a href="#"
+    <a href="{{ route('admin.news.index') }}"
       class="bg-white border border-gray-200 hover:bg-amber-50 transition duration-300 rounded-xl px-4 py-5 flex items-center gap-4 shadow-sm hover:shadow-md transform hover:scale-[1.02]">
       <div class="bg-amber-100 text-amber-600 rounded-xl p-3 text-2xl">
         <ion-icon name="newspaper-outline"></ion-icon>
       </div>
       <div>
         <h2 class="text-base md:text-lg font-bold text-gray-900">Total Berita</h2>
-        <p class="text-xs md:text-sm text-gray-900">20 Berita</p>
+        <p class="text-xs md:text-sm text-gray-900">{{ $totalNews }} Berita</p>
       </div>
     </a>
 
-    <!--berita-->
-    <a href="#"
+    <!--galeri-->
+    <a href="{{ route('admin.galleries.index') }}"
       class="bg-white border border-gray-200 hover:bg-amber-50 transition duration-300 rounded-xl px-4 py-5 flex items-center gap-4 shadow-sm hover:shadow-md transform hover:scale-[1.02]">
       <div class="bg-amber-100 text-amber-600 rounded-xl p-3 text-2xl">
         <ion-icon name="images-outline"></ion-icon>
       </div>
       <div>
         <h2 class="text-base md:text-lg font-bold text-gray-900">Total Galeri</h2>
-        <p class="text-xs md:text-sm text-gray-900">27 Galeri</p>
+        <p class="text-xs md:text-sm text-gray-900">{{ $totalGallery + $totalSlideshow }} Galeri</p>
       </div>
     </a>
 
