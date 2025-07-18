@@ -8,13 +8,14 @@ use Illuminate\Http\Request;
 
 class GalleryController extends Controller
 {
-    // Tampilkan halaman index gabungan slideshow + gallery
-    public function index()
-    {
-        $slideshows = Slideshow::latest()->get();
-        $gallery = Gallery::latest()->get();
-        return view('admin.galleries.index', compact('slideshows', 'gallery'));
-    }
+public function index()
+{
+    $slideshows = Slideshow::orderBy('id', 'asc')->paginate(5, ['*'], 'slideshows');
+    $gallery = Gallery::orderBy('id', 'asc')->paginate(5, ['*'], 'gallery');
+
+    return view('admin.galleries.index', compact('slideshows', 'gallery'));
+}
+
 
     // Tampilkan form tambah galeri
     public function create()

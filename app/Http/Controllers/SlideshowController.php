@@ -10,8 +10,8 @@ class SlideshowController extends Controller
     // Jika kamu ingin pakai index tersendiri (bisa dihapus kalau hanya gabung di galeri)
     public function index()
     {
-        $slideshows = Slideshow::latest()->get();
-        return view('admin.galleries.slideshow.index', compact('slideshows'));
+    $slideshows = Slideshow::latest()->paginate(5);
+    return view('admin.slideshows.index', compact('slideshows'));
     }
 
     // Menampilkan form tambah slideshow

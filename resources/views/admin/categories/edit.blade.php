@@ -1,19 +1,37 @@
 <x-layout.admin-layout>
-  <div class="p-4 max-w-lg mx-auto">
-    <h1 class="text-xl font-bold mb-4">Edit Kategori</h1>
+  <div class="p-4">
+    <div class="bg-white rounded-lg shadow p-6 max-w-xl mx-auto">
+      <h1 class="text-2xl font-bold mb-6">Edit Kategori</h1>
 
-    <form action="{{ route('admin.categories.update', $category->id) }}" method="POST" class="space-y-4">
-      @csrf
-      @method('PUT')
+      <form action="{{ route('admin.categories.update', $category->id) }}" method="POST" class="space-y-5">
+        @csrf
+        @method('PUT')
 
-      <div>
-        <label for="name" class="block mb-1 font-medium">Nama Kategori</label>
-        <input type="text" name="name" id="name" value="{{ old('name', $category->name) }}" required class="w-full border p-2 rounded">
-        @error('name') <p class="text-red-500 text-sm">{{ $message }}</p> @enderror
-      </div>
+        <div>
+          <label for="name" class="block mb-1 font-medium text-sm text-gray-700">Nama Kategori</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            value="{{ old('name', $category->name) }}"
+            required
+            class="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-amber-400"
+          >
+          @error('name')
+            <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+          @enderror
+        </div>
 
-      <button type="submit" class="font-semibold bg-amber-300 px-4 py-2 rounded hover:bg-amber-500">Update</button>
-      <a href="{{ route('admin.categories.index') }}" class="ml-4 text-gray-500">Batal</a>
-    </form>
+        <div class="flex items-center space-x-4">
+          <button
+            type="submit"
+            class="bg-yellow-300 hover:bg-yellow-400 text-black font-semibold px-5 py-2 rounded-lg transition"
+          >
+            Update
+          </button>
+          <a href="{{ route('admin.categories.index') }}" class="text-gray-600 hover:underline text-md">Batal</a>
+        </div>
+      </form>
+    </div>
   </div>
-</x-layout.admin-layoutt>
+</x-layout.admin-layout>

@@ -73,7 +73,7 @@
 
 
   <!-- Tentang Kami -->
-  <section class="bg-white py-20 px-4 md:px-10 lg:px-10">
+  <section class="bg-white py-20 px-4 md:px-10 lg:px-10 xl:px-10">
     <div class="max-w-3xl mx-auto text-center">
       <h2 class="text-3xl font-bold mb-4">TENTANG KAMI</h2>
       <p class="text-gray-600 mb-6">
@@ -84,7 +84,7 @@
   </section>
 
 <!-- Card Makanan -->
-<section class="bg-cover bg-center py-24 px-4 md:px-10 lg:px-10 xl:px-10 " style="background-image: url('img/bg-card.png');">
+<section class="bg-cover bg-center py-24 px-4 md:px-10 lg:px-10 xl:px-10" style="background-image: url('img/bg-card.png');">
   <div class="max-w-7xl mx-auto">
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10 sm:gap-y-16">
       
@@ -119,7 +119,6 @@
   </div>
 </section>
 
-
 <!-- Section Berita -->
 <section class="py-20 px-4 md:px-10 lg:px-10 xl:px-10 bg-[#f4f4f4]">
   <div class="max-w-7xl mx-auto">
@@ -128,63 +127,47 @@
     <!-- Container Responsive -->
     <div class="flex flex-col lg:flex-row gap-8">
       <!-- Berita Utama -->
-      <div class="w-full lg:w-1/2">
-        <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:scale-[1.02] transition-transform duration-300">
-          <img src="img/berita_utama.jpg" alt="Berita Utama" class="w-full h-[240px] md:h-[280px] lg:h-[370px] object-cover">
-          <div class="p-4 sm:p-6">
-            <h3 class="text-xl md:text-2xl font-bold mb-2 uppercase">Lorem ipsum dolor sit amet consectetur.</h3>
-            <p class="text-gray-600 text-sm md:text-base leading-relaxed mb-3">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quis tempore harum inventore expedita.
-            </p>
-            <a href="#" class="text-sm text-yellow-500 font-medium hover:text-yellow-600 hover:underline transition-all duration-300 active:scale-95">
-              Baca selengkapnya
-            </a>
-          </div>
-        </div>
+<div class="w-full lg:w-1/2">
+  @if($berita->count() > 0)
+  @php $utama = $berita->first(); @endphp
+  <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:scale-[1.02] transition-transform duration-300">
+    <img src="{{ asset('storage/' . $utama->image) }}" alt="{{ $utama->title }}"
+         class="w-full h-[240px] md:h-[280px] lg:h-[370px] object-cover">
+    <div class="p-4 sm:p-6">
+      <h3 class="text-xl md:text-2xl font-bold mb-2 uppercase">{{ $utama->title }}</h3>
+      <p class="text-gray-600 text-sm md:text-base leading-relaxed mb-3">
+        {{ \Illuminate\Support\Str::limit($utama->content, 100) }}
+      </p>
+      <a href="#" class="text-sm text-yellow-500 font-medium hover:text-yellow-600 hover:underline transition-all duration-300 active:scale-95">
+        Baca selengkapnya
+      </a>
+    </div>
+  </div>
+  @endif
+</div>
+
+
+<!-- Grid Mini Berita -->
+<div class="w-full lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-6 content-start">
+  @foreach($berita->skip(1) as $item)
+  <div class="bg-white rounded-2xl shadow-xl hover:scale-105 transition-transform duration-300 overflow-hidden flex flex-col h-full">
+    <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->title }}"
+         class="w-full h-[137.9px] object-cover">
+    <div class="p-3 sm:p-4 flex flex-col justify-between flex-grow">
+      <div>
+        <h4 class="text-sm font-bold mb-1 uppercase">{{ $item->title }}</h4>
+        <p class="text-gray-600 text-xs leading-snug mb-2 line-clamp-2">
+          {{ \Illuminate\Support\Str::limit($item->content, 80) }}
+        </p>
       </div>
+      <a href="#" class="text-xs text-yellow-500 hover:text-yellow-600 hover:underline active:scale-95 transition-all mt-auto">
+        Baca selengkapnya
+      </a>
+    </div>
+  </div>
+  @endforeach
+</div>
 
-      <!-- Grid Mini Berita -->
-      <div class="w-full lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-6">
-        <!-- Ulangi 4x Mini Card -->
-        <div class="bg-white rounded-2xl shadow-xl hover:scale-105 transition-transform duration-300 overflow-hidden">
-          <img src="img/berita_mini1.jpg" alt="Berita 2" class="w-full h-[120px] object-cover">
-          <div class="p-3 sm:p-4">
-            <h4 class="text-sm font-bold mb-1 uppercase">lorem ipsum</h4>
-            <p class="text-gray-600 text-xs leading-snug mb-1">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-            <a href="#" class="text-xs text-yellow-500 hover:text-yellow-600 hover:underline active:scale-95 transition-all">Baca selengkapnya</a>
-          </div>
-        </div>
-
-        <!-- Mini 2 -->
-        <div class="bg-white rounded-2xl shadow-xl hover:scale-105 transition-transform duration-300 overflow-hidden">
-          <img src="img/berita_mini2.jpg" alt="Berita 3" class="w-full h-[120px] object-cover">
-          <div class="p-3 sm:p-4">
-            <h4 class="text-sm font-bold mb-1 uppercase">lorem ipsum</h4>
-            <p class="text-gray-600 text-xs leading-snug mb-1">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-            <a href="#" class="text-xs text-yellow-500 hover:text-yellow-600 hover:underline active:scale-95 transition-all">Baca selengkapnya</a>
-          </div>
-        </div>
-
-        <!-- Mini 3 -->
-        <div class="bg-white rounded-2xl shadow-xl hover:scale-105 transition-transform duration-300 overflow-hidden">
-          <img src="img/berita_mini3.jpg" alt="Berita 4" class="w-full h-[120px] object-cover">
-          <div class="p-3 sm:p-4">
-            <h4 class="text-sm font-bold mb-1 uppercase">lorem ipsum</h4>
-            <p class="text-gray-600 text-xs leading-snug mb-1">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-            <a href="#" class="text-xs text-yellow-500 hover:text-yellow-600 hover:underline active:scale-95 transition-all">Baca selengkapnya</a>
-          </div>
-        </div>
-
-        <!-- Mini 4 -->
-        <div class="bg-white rounded-2xl shadow-xl hover:scale-105 transition-transform duration-300 overflow-hidden">
-          <img src="img/berita_mini4.jpg" alt="Berita 5" class="w-full h-[120px] object-cover">
-          <div class="p-3 sm:p-4">
-            <h4 class="text-sm font-bold mb-1 uppercase">lorem ipsum</h4>
-            <p class="text-gray-600 text-xs leading-snug mb-1">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-            <a href="#" class="text-xs text-yellow-500 hover:text-yellow-600 hover:underline active:scale-95 transition-all">Baca selengkapnya</a>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -192,50 +175,22 @@
 <!-- Galeri Section -->
 <section class="py-20 px-4 md:px-10 lg:px-10 xl:px-10 bg-white">
   <h2 class="text-3xl font-bold text-center mb-12">GALERI KAMI</h2>
-  
+
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-    <!-- 1 -->
+    @foreach($galeri as $item)
     <div class="overflow-hidden rounded-xl shadow-md aspect-square group hover:scale-105 transition-transform duration-300">
-      <img src="img/gallery1.jpg" alt="Gallery 1"
+      <img src="{{ asset('storage/' . $item->image) }}" alt="Gallery Image"
         class="w-full h-full object-cover">
     </div>
-
-    <!-- 2 -->
-    <div class="overflow-hidden rounded-xl shadow-md aspect-square group hover:scale-105 transition-transform duration-300">
-      <img src="img/gallery2.jpg" alt="Gallery 2"
-        class="w-full h-full object-cover">
-    </div>
-
-    <!-- 3 -->
-    <div class="overflow-hidden rounded-xl shadow-md aspect-square group hover:scale-105 transition-transform duration-300">
-      <img src="img/gallery3.jpg" alt="Gallery 3"
-        class="w-full h-full object-cover">
-    </div>
-
-    <!-- 4 -->
-    <div class="overflow-hidden rounded-xl shadow-md aspect-square group hover:scale-105 transition-transform duration-300">
-      <img src="img/gallery4.jpg" alt="Gallery 4"
-        class="w-full h-full object-cover">
-    </div>
-
-    <!-- 5 -->
-    <div class="overflow-hidden rounded-xl shadow-md aspect-square group hover:scale-105 transition-transform duration-300">
-      <img src="img/gallery5.jpg" alt="Gallery 5"
-        class="w-full h-full object-cover">
-    </div>
-
-    <!-- 6 -->
-    <div class="overflow-hidden rounded-xl shadow-md aspect-square group hover:scale-105 transition-transform duration-300">
-      <img src="img/gallery6.jpg" alt="Gallery 6"
-        class="w-full h-full object-cover">
-    </div>
+    @endforeach
   </div>
 
   <div class="text-center mt-10">
-    <a href="{{ route('galeri') }}" class="inline-block px-8 py-3 bg-black text-white font-semibold hover:scale-105 transition-transform">LIHAT LEBIH BANYAK</a>
+    <a href="{{ route('galeri') }}" class="inline-block px-8 py-3 bg-black text-white font-semibold hover:scale-105 transition-transform">
+      LIHAT LEBIH BANYAK
+    </a>
   </div>
 </section>
- 
 
   <!-- Script -->
   <script>

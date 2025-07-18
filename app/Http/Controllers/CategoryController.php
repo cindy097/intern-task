@@ -11,7 +11,7 @@ class CategoryController extends Controller
     // Tampilkan semua kategori
     public function index()
     {
-        $categories = Category::all();
+        $categories = Category::orderBy('id', 'asc')->paginate(15);
         return view('admin.categories.index', compact('categories'));
     }
 

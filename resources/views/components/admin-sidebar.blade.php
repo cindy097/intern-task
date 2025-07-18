@@ -24,14 +24,15 @@
         <ion-icon name="images-outline" class="text-lg"></ion-icon>
         Galeri
       </a>
-      <a href="/admin/kontak" class="flex items-center gap-2 py-2 px-3 rounded hover:bg-gray-100">
+      <a href="{{ route('admin.messages.index') }}" class="flex items-center gap-2 py-2 px-3 rounded hover:bg-gray-100">
         <ion-icon name="mail-outline" class="text-lg"></ion-icon>
         Kontak Masuk
       </a>
-      <a href="/admin/kontak" class="flex items-center gap-2 py-2 px-3 rounded hover:bg-gray-100">
-        <ion-icon name="call-outline" class="text-lg"></ion-icon>
-        Informasi Kontak
-      </a>
+<a href="{{ route('admin.contacts.index') }}" class="flex items-center gap-2 py-2 px-3 rounded hover:bg-gray-100">
+  <ion-icon name="call-outline" class="text-lg"></ion-icon>
+  Informasi Kontak
+</a>
+
     </nav>
   </div>
 

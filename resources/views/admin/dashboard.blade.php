@@ -33,14 +33,14 @@
     </a>
 
     <!--kontak masuk-->
-    <a href="#"
+    <a href="{{ route('admin.messages.index') }}"
       class="bg-white border border-gray-200 hover:bg-amber-50 transition duration-300 rounded-xl px-4 py-5 flex items-center gap-4 shadow-sm hover:shadow-md transform hover:scale-[1.02]">
       <div class="bg-amber-100 text-amber-600 rounded-xl p-3 text-2xl">
         <ion-icon name="mail-outline"></ion-icon>
       </div>
       <div>
         <h2 class="text-base md:text-lg font-bold text-gray-900">Kontak Masuk</h2>
-        <p class="text-xs md:text-sm text-gray-900">23 Kontak Masuk</p>
+        <p class="text-xs md:text-sm text-gray-900">{{ $totalMessages }} Kontak Masuk</p>
       </div>
     </a>
 
