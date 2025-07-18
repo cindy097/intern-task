@@ -6,7 +6,11 @@
 
   <!-- Sidebar Content -->
   <div>
-    <div class="px-6 py-4 text-xl font-bold border-b">Tasty Food</div>
+    <a href="{{ url('/') }}" target="_blank" rel="noopener noreferrer">
+  <div class="px-6 py-4 text-xl font-bold border-b hover:underline cursor-pointer">
+    Tasty Food
+  </div>
+</a>
     <nav class="flex flex-col gap-1 p-4 text-sm">
       <a href="{{ route('admin.dashboard') }}" class="flex items-center gap-2 py-2 px-3 rounded hover:bg-gray-100">
         <ion-icon name="grid-outline" class="text-lg"></ion-icon>
