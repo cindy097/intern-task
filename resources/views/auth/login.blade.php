@@ -1,9 +1,9 @@
-<x-layout.layout-auth>
+<x-layout.layout-auth title="Login | Tasty Food">
     <form method="POST" action="{{ route('login') }}">
         @csrf
 
-        <h2 class="text-2xl font-bold text-yellow-600 mb-2">Selamat Datang</h2>
-        <p class="text-slate-600 mb-6">Masukkan email dan password untuk masuk</p>
+        <h2 class="text-2xl font-bold text-yellow-400 mb-2 text-center">Selamat Datang</h2>
+        <p class="text-slate-600 mb-6 text-sm text-center">Masukkan email dan password untuk masuk</p>
 
         <!-- Email -->
         <div class="mb-4">
@@ -27,24 +27,23 @@
             @enderror
         </div>
 
-        <div class="flex items-center">
-    <input type="checkbox" name="remember" id="remember" class="mr-2">
-    <label for="remember" class="text-sm text-slate-700">Ingat saya</label>
+        <div class="flex items-center mb-4">
+            <input type="checkbox" name="remember" id="remember" class="mr-2">
+            <label for="remember" class="text-sm text-slate-700">Ingat saya</label>
         </div>
 
-        <!-- Error umum (misalnya kombinasi email & password salah) -->
         @if (session('error'))
             <p class="text-sm text-red-600 mt-1">{{ session('error') }}</p>
         @endif
 
         <button type="submit"
-                class="w-full mt-4 bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded">
+                class="w-full mt-2 bg-yellow-300 hover:bg-yellow-400 text-black font-bold py-2 px-4 rounded">
             MASUK
         </button>
 
-        <p class="mt-4 text-sm text-slate-600">
+        <p class="mt-4 text-sm text-slate-600 text-center">
             Belum punya akun?
-            <a href="{{ route('register') }}" class="text-yellow-600 font-semibold">Daftar</a>
+            <a href="{{ route('register') }}" class="text-yellow-400 font-semibold">Daftar</a>
         </p>
     </form>
 </x-layout.layout-auth>

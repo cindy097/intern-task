@@ -2,25 +2,54 @@
   <div class="p-4">
     <div class="bg-white rounded-lg shadow p-6">
 
-      <div class="flex justify-between items-center mb-6">
+      <!-- Header -->
+      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-3 sm:gap-0">
         <h1 class="text-2xl font-bold">Daftar Kategori</h1>
-        <a href="{{ route('admin.categories.create') }}" class="bg-yellow-300 hover:bg-yellow-400 text-black font-semibold px-5 py-2 rounded-lg transition">
+        <a href="{{ route('admin.categories.create') }}"
+           class="bg-yellow-300 hover:bg-yellow-400 text-black font-semibold px-5 py-2 rounded-lg transition text-sm sm:text-base">
           + Tambah Kategori
         </a>
       </div>
 
+      <!-- Alert -->
       @if(session('success'))
         <div class="bg-green-100 border border-green-300 text-green-700 p-3 rounded mb-6 text-sm">
           {{ session('success') }}
         </div>
       @endif
 
-      <div class="overflow-x-auto">
-        <table class="w-full table-auto text-sm border rounded-lg overflow-hidden">
+      <!-- Mobile View -->
+      <div class="space-y-4 md:hidden">
+        @forelse ($categories as $category)
+          <div class="border rounded-lg p-4 shadow-sm bg-gray-50">
+            <h3 class="text-lg font-bold mb-2">{{ $category->name }}</h3>
+            <div class="flex justify-end items-center gap-3">
+              <a href="{{ route('admin.categories.edit', $category->id) }}"
+                 class="text-blue-600 text-sm font-medium hover:underline">Edit</a>
+              <form action="{{ route('admin.categories.destroy', $category->id) }}" method="POST"
+                    onsubmit="return confirm('Yakin ingin menghapus kategori ini?')" class="contents">
+                @csrf @method('DELETE')
+                <button type="submit" class="text-red-600 text-sm font-medium hover:underline">Hapus</button>
+              </form>
+            </div>
+          </div>
+        @empty
+          <p class="text-center text-gray-500">Belum ada kategori.</p>
+        @endforelse
+
+        <!-- Pagination Mobile -->
+        <div class="mt-6">
+          {{ $categories->links() }}
+        </div>
+      </div>
+
+      <!-- Desktop View -->
+      <div class="hidden md:block overflow-x-auto">
+        <table class="w-full text-sm border rounded-lg overflow-hidden">
           <thead class="bg-gray-100 text-left">
             <tr>
-              <th class="p-3 border text-center">ID</th>
-              <th class="p-3 border text-center">Nama Kategori</th>
+              <th class="p-3 border text-center">#</th>
+              <th class="p-3 border">Nama Kategori</th>
               <th class="p-3 border text-center">Aksi</th>
             </tr>
           </thead>
@@ -30,11 +59,15 @@
                 <td class="p-3 border text-center">{{ $loop->iteration }}</td>
                 <td class="p-3 border">{{ $category->name }}</td>
                 <td class="p-3 border text-center">
-                  <a href="{{ route('admin.categories.edit', $category->id) }}" class="text-blue-600 hover:underline font-medium">Edit</a>
-                  <form action="{{ route('admin.categories.destroy', $category->id) }}" method="POST" class="inline">
-                    @csrf @method('DELETE')
-                    <button onclick="return confirm('Yakin ingin menghapus kategori ini?')" class="text-red-600 hover:underline font-medium ml-3">Hapus</button>
-                  </form>
+                  <div class="flex justify-center items-center gap-3">
+                    <a href="{{ route('admin.categories.edit', $category->id) }}"
+                       class="text-blue-600 text-sm font-medium hover:underline">Edit</a>
+                    <form action="{{ route('admin.categories.destroy', $category->id) }}" method="POST"
+                          onsubmit="return confirm('Yakin ingin menghapus kategori ini?')" class="contents">
+                      @csrf @method('DELETE')
+                      <button type="submit" class="text-red-600 text-sm font-medium hover:underline">Hapus</button>
+                    </form>
+                  </div>
                 </td>
               </tr>
             @empty
@@ -44,11 +77,13 @@
             @endforelse
           </tbody>
         </table>
+
+        <!-- Pagination Desktop -->
+        <div class="mt-6">
+          {{ $categories->links() }}
+        </div>
       </div>
 
-      <div class="mt-6">
-        {{ $categories->links() }}
-      </div>
     </div>
   </div>
 </x-layout.admin-layout>

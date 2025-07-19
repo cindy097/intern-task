@@ -9,12 +9,18 @@ use Illuminate\Http\Request;
 
 class NewsController extends Controller
 {
-    public function index()
-    {
-        $news = News::with('category')->latest()->get();
-        return view('admin.news.index', compact('news'));
-    }
+public function index(Request $request)
+{
+    // Cek apakah user sedang pakai HP atau desktop via ukuran layar (pakai JS atau header bisa juga)
+    $isMobile = $request->header('User-Agent') && str_contains($request->header('User-Agent'), 'Mobile');
 
+    // Tentukan jumlah item per halaman
+    $perPage = $isMobile ? 5 : 10;
+
+    $news = News::with('category')->latest()->paginate($perPage);
+
+    return view('admin.news.index', compact('news'));
+}
     public function create()
     {
         $categories = Category::all();
