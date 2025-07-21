@@ -20,7 +20,7 @@
     <button onclick="toggleMenu()" class="text-3xl md:hidden text-black">
       <ion-icon name="menu-outline"></ion-icon>
     </button>
-    <h1 class="mb-[7px] font-bold text-xl text-black">TASTY FOOD</h1>
+    <h1 class="font-bold text-xl text-black">TASTY FOOD</h1>
     <ul class="hidden md:flex space-x-6 text-sm font-medium text-black">
       <li><a href="{{ url('/') }}" class="hover:text-gray-500">HOME</a></li>
       <li><a href="{{ route('tentang') }}" class="hover:text-gray-500">TENTANG</a></li>

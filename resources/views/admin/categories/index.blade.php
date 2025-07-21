@@ -48,7 +48,7 @@
         <table class="w-full text-sm border rounded-lg overflow-hidden">
           <thead class="bg-gray-100 text-left">
             <tr>
-              <th class="p-3 border text-center">#</th>
+              <th class="p-3 border text-center">ID</th>
               <th class="p-3 border">Nama Kategori</th>
               <th class="p-3 border text-center">Aksi</th>
             </tr>

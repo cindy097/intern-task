@@ -11,7 +11,6 @@ class NewsController extends Controller
 {
 public function index(Request $request)
 {
-    // Cek apakah user sedang pakai HP atau desktop via ukuran layar (pakai JS atau header bisa juga)
     $isMobile = $request->header('User-Agent') && str_contains($request->header('User-Agent'), 'Mobile');
 
     // Tentukan jumlah item per halaman

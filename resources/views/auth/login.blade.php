@@ -5,7 +5,6 @@
         <h2 class="text-2xl font-bold text-yellow-400 mb-2 text-center">Selamat Datang</h2>
         <p class="text-slate-600 mb-6 text-sm text-center">Masukkan email dan password untuk masuk</p>
 
-        <!-- Email -->
         <div class="mb-4">
             <label for="email" class="block text-sm font-semibold text-slate-700">Email</label>
             <input type="email" name="email" id="email" value="{{ old('email') }}"
@@ -16,7 +15,6 @@
             @enderror
         </div>
 
-        <!-- Password -->
         <div class="mb-4">
             <label for="password" class="block text-sm font-semibold text-slate-700">Password</label>
             <input type="password" name="password" id="password"

@@ -47,7 +47,7 @@
           <table class="w-full table-auto text-sm border rounded-lg overflow-hidden">
             <thead class="bg-gray-100 text-left">
               <tr>
-                <th class="p-3 border text-center">#</th>
+                <th class="p-3 border text-center">ID</th>
                 <th class="p-3 border">Judul</th>
                 <th class="p-3 border text-center">Gambar</th>
                 <th class="p-3 border text-center">Aksi</th>
@@ -127,7 +127,7 @@
           <table class="w-full table-auto text-sm border rounded-lg overflow-hidden">
             <thead class="bg-gray-100 text-left">
               <tr>
-                <th class="p-3 border text-center">#</th>
+                <th class="p-3 border text-center">ID</th>
                 <th class="p-3 border">Judul</th>
                 <th class="p-3 border text-center">Gambar</th>
                 <th class="p-3 border text-center">Aksi</th>
