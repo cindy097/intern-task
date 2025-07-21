@@ -27,10 +27,10 @@
               <a href="{{ route('admin.categories.edit', $category->id) }}"
                  class="text-blue-600 text-sm font-medium hover:underline">Edit</a>
               <form action="{{ route('admin.categories.destroy', $category->id) }}" method="POST"
-                    onsubmit="return confirm('Yakin ingin menghapus kategori ini?')" class="contents">
-                @csrf @method('DELETE')
-                <button type="submit" class="text-red-600 text-sm font-medium hover:underline">Hapus</button>
-              </form>
+                     onsubmit="return confirm('Menghapus kategori ini akan secara permanen menghapus semua berita yang terkait. Lanjutkan?')" class="contents">
+                     @csrf @method('DELETE')
+              <button type="submit" class="text-red-600 text-sm font-medium hover:underline">Hapus</button>
+               </form>
             </div>
           </div>
         @empty
@@ -62,11 +62,10 @@
                   <div class="flex justify-center items-center gap-3">
                     <a href="{{ route('admin.categories.edit', $category->id) }}"
                        class="text-blue-600 text-sm font-medium hover:underline">Edit</a>
-                    <form action="{{ route('admin.categories.destroy', $category->id) }}" method="POST"
-                          onsubmit="return confirm('Yakin ingin menghapus kategori ini?')" class="contents">
-                      @csrf @method('DELETE')
-                      <button type="submit" class="text-red-600 text-sm font-medium hover:underline">Hapus</button>
-                    </form>
+                    <a href="#" onclick="deleteCategory(event, '{{ route('admin.categories.destroy', $category->id) }}')" 
+   class="text-red-600 text-sm font-medium hover:underline">
+   Hapus
+</a>
                   </div>
                 </td>
               </tr>
@@ -86,4 +85,40 @@
 
     </div>
   </div>
+  @push('scripts')
+<script>
+function deleteCategory(e, url) {
+    e.preventDefault();
+    Swal.fire({
+        title: 'Hapus Kategori?',
+        text: 'Semua berita yang menggunakan kategori ini juga akan dihapus.',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#aaa',
+        confirmButtonText: 'Ya, hapus!',
+        cancelButtonText: 'Batal'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            const form = document.createElement('form');
+            form.action = url;
+            form.method = 'POST';
+
+            const token = document.createElement('input');
+            token.name = '_token';
+            token.value = '{{ csrf_token() }}';
+            form.appendChild(token);
+
+            const method = document.createElement('input');
+            method.name = '_method';
+            method.value = 'DELETE';
+            form.appendChild(method);
+
+            document.body.appendChild(form);
+            form.submit();
+        }
+    });
+}
+</script>
+@endpush
 </x-layout.admin-layout>

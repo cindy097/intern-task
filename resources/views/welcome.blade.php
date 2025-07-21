@@ -20,7 +20,7 @@
     <button onclick="toggleMenu()" class="text-3xl md:hidden text-black">
       <ion-icon name="menu-outline"></ion-icon>
     </button>
-    <h1 class="font-bold text-xl text-black">TASTY FOOD</h1>
+    <h1 class="mb-[7px] font-bold text-xl text-black">TASTY FOOD</h1>
     <ul class="hidden md:flex space-x-6 text-sm font-medium text-black">
       <li><a href="{{ url('/') }}" class="hover:text-gray-500">HOME</a></li>
       <li><a href="{{ route('tentang') }}" class="hover:text-gray-500">TENTANG</a></li>
@@ -35,7 +35,7 @@
 <div id="mobileMenu"
      class="fixed top-0 left-0 h-full w-64 bg-white z-[999] shadow-lg transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden flex flex-col text-black">
   <div class="flex justify-between items-center px-6 py-4 border-b">
-    <h2 class="font-bold text-lg">MENU</h2>
+    <h2 class="font-bold text-lg">TASTY FOOD</h2>
     <button onclick="toggleMenu()" class="text-2xl">
       <ion-icon name="close-outline"></ion-icon>
     </button>
@@ -138,7 +138,7 @@
       <p class="text-gray-600 text-sm md:text-base leading-relaxed mb-3">
         {{ \Illuminate\Support\Str::limit($utama->content, 100) }}
       </p>
-      <a href="#" class="text-sm text-yellow-500 font-medium hover:text-yellow-600 hover:underline transition-all duration-300 active:scale-95">
+      <a href="{{ route('berita.show', $utama->id) }}" class="text-sm text-yellow-500 hover:text-yellow-600 hover:underline transition-all duration-300 active:scale-95">
         Baca selengkapnya
       </a>
     </div>
@@ -148,7 +148,7 @@
 
 
 <!-- Grid Mini Berita -->
-<div class="w-full lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-6 content-start">
+<div class="w-full lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-6 items-start">
   @foreach($berita->skip(1) as $item)
   <div class="bg-white rounded-2xl shadow-xl hover:scale-105 transition-transform duration-300 overflow-hidden flex flex-col h-full">
     <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->title }}"
@@ -160,7 +160,7 @@
           {{ \Illuminate\Support\Str::limit($item->content, 80) }}
         </p>
       </div>
-      <a href="#" class="text-xs text-yellow-500 hover:text-yellow-600 hover:underline active:scale-95 transition-all mt-auto">
+      <a href="{{ route('berita.show', $item->id) }}" class="text-xs text-yellow-500 hover:text-yellow-600 hover:underline active:scale-95 transition-all mt-auto">
         Baca selengkapnya
       </a>
     </div>

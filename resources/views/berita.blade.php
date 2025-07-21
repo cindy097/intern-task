@@ -18,11 +18,11 @@
 
     <!-- Konten -->
     <div class="w-full">
-      <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-3 mt-4">{{ $beritaUtama->title }}</h2>
+      <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-3 mt-[-18px] lg:mt-0">{{ $beritaUtama->title }}</h2>
       <p class="text-gray-700 text-base leading-relaxed mb-5">
         {{ \Illuminate\Support\Str::limit($beritaUtama->content, 150) }}
       </p>
-      <a href="#" class="inline-block bg-black text-white px-6 py-3 font-semibold hover:bg-gray-800 transition-all duration-300 active:scale-95">
+      <a href="{{ route('berita.show', $beritaUtama->id) }}" class="inline-block bg-black text-white px-6 py-3 font-semibold hover:bg-gray-800 transition-all duration-300 active:scale-95">
         BACA SELENGKAPNYA
       </a>
     </div>
@@ -37,18 +37,22 @@
     <h2 class="text-2xl font-bold text-gray-900 mb-8">BERITA LAINNYA</h2>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
-      @foreach($beritaLainnya as $item)
-      <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:scale-105 transition-transform duration-300">
-        <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->title }}" class="w-full h-[140px] object-cover">
-        <div class="p-4">
-          <h3 class="text-lg font-semibold text-gray-900 uppercase">{{ $item->title }}</h3>
-          <p class="text-sm text-gray-600 mt-2 mb-4 leading-snug">
-            {{ \Illuminate\Support\Str::limit($item->content, 100) }}
-          </p>
-          <a href="#" class="text-yellow-500 text-sm hover:underline">Baca selengkapnya</a>
-        </div>
+@foreach($beritaLainnya as $item)
+  <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:scale-105 transition-transform duration-300 flex flex-col h-full">
+    <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->title }}" class="w-full h-[140px] object-cover">
+    <div class="p-4 flex flex-col justify-between flex-grow">
+      <div>
+        <h3 class="text-sm font-bold text-gray-900 uppercase">{{ $item->title }}</h3>
+        <p class="text-xs text-gray-600 mt-2 leading-snug">
+          {{ \Illuminate\Support\Str::limit($item->content, 100) }}
+        </p>
       </div>
-      @endforeach
+      <div class="mt-4">
+        <a href="{{ route('berita.show', $item->id) }}" class="text-yellow-500 text-xs hover:underline">Baca selengkapnya</a>
+      </div>
+    </div>
+  </div>
+@endforeach
     </div>
   </div>
 </section>

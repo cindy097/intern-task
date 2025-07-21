@@ -18,28 +18,29 @@
           </div>
         @endif
 
-        {{-- Mobile View --}}
-        <div class="space-y-4 md:hidden">
-          @forelse ($slideshows as $slideshow)
-            <div class="border rounded-lg p-4 bg-gray-50 shadow-sm">
-              <h3 class="text-lg font-bold mb-2">{{ $slideshow->title }}</h3>
-              <img src="{{ asset('storage/' . $slideshow->image) }}" class="w-full h-40 object-cover rounded mb-3">
-              <div class="flex justify-end gap-3">
-                <a href="{{ route('admin.slideshows.edit', $slideshow->id) }}" class="text-blue-600 text-sm hover:underline font-medium">Edit</a>
-                <form action="{{ route('admin.slideshows.destroy', $slideshow->id) }}" method="POST" onsubmit="return confirm('Yakin hapus slideshow ini?')">
-                  @csrf @method('DELETE')
-                  <button class="text-red-600 text-sm hover:underline font-medium">Hapus</button>
-                </form>
-              </div>
-            </div>
-          @empty
-            <p class="text-center text-gray-500">Belum ada slideshow.</p>
-          @endforelse
+{{-- Mobile View --}}
+<div class="space-y-4 md:hidden">
+  @forelse ($slideshows as $slideshow)
+    <div class="border rounded-lg p-4 bg-gray-50 shadow-sm">
+      <h3 class="text-lg font-bold mb-2">{{ $slideshow->title }}</h3>
+      <img src="{{ asset('storage/' . $slideshow->image) }}" class="w-full h-40 object-cover rounded mb-3">
+      <div class="flex justify-end items-center gap-3">
+        <a href="{{ route('admin.slideshows.edit', $slideshow->id) }}" class="text-blue-600 text-sm hover:underline font-medium">Edit</a>
+        <form action="{{ route('admin.slideshows.destroy', $slideshow->id) }}" method="POST" onsubmit="return confirm('Yakin hapus slideshow ini?')">
+          @csrf
+          @method('DELETE')
+          <button class="text-red-600 text-sm hover:underline font-medium">Hapus</button>
+        </form>
+      </div>
+    </div>
+  @empty
+    <p class="text-center text-gray-500">Belum ada slideshow.</p>
+  @endforelse
 
-          <div class="mt-6">
-            {{ $slideshows->links() }}
-          </div>
-        </div>
+  <div class="mt-6">
+    {{ $slideshows->links() }}
+  </div>
+</div>
 
         {{-- Desktop View --}}
         <div class="hidden md:block overflow-x-auto">
@@ -98,27 +99,28 @@
         @endif
 
         {{-- Mobile View --}}
-        <div class="space-y-4 md:hidden">
-          @forelse ($gallery as $item)
-            <div class="border rounded-lg p-4 bg-gray-50 shadow-sm">
-              <h3 class="text-lg font-bold mb-2">{{ $item->title }}</h3>
-              <img src="{{ asset('storage/' . $item->image) }}" class="w-full h-40 object-cover rounded mb-3">
-              <div class="flex justify-end gap-3">
-                <a href="{{ route('admin.galleries.edit', $item->id) }}" class="text-blue-600 text-sm hover:underline font-medium">Edit</a>
-                <form action="{{ route('admin.galleries.destroy', $item->id) }}" method="POST" onsubmit="return confirm('Yakin hapus galeri ini?')">
-                  @csrf @method('DELETE')
-                  <button class="text-red-600 text-sm hover:underline font-medium">Hapus</button>
-                </form>
-              </div>
-            </div>
-          @empty
-            <p class="text-center text-gray-500">Belum ada gambar galeri.</p>
-          @endforelse
+<div class="space-y-4 md:hidden">
+  @forelse ($gallery as $item)
+    <div class="border rounded-lg p-4 bg-gray-50 shadow-sm">
+      <h3 class="text-lg font-bold mb-2">{{ $item->title }}</h3>
+      <img src="{{ asset('storage/' . $item->image) }}" class="w-full h-40 object-cover rounded mb-3">
+      <div class="flex justify-end items-center gap-3">
+        <a href="{{ route('admin.galleries.edit', $item->id) }}" class="text-blue-600 text-sm hover:underline font-medium">Edit</a>
+        <form action="{{ route('admin.galleries.destroy', $item->id) }}" method="POST" onsubmit="return confirm('Yakin hapus galeri ini?')">
+          @csrf @method('DELETE')
+          <button class="text-red-600 text-sm hover:underline font-medium">Hapus</button>
+        </form>
+      </div>
+    </div>
+  @empty
+    <p class="text-center text-gray-500">Belum ada gambar galeri.</p>
+  @endforelse
 
-          <div class="mt-6">
-            {{ $gallery->links() }}
-          </div>
-        </div>
+  <div class="mt-6">
+    {{ $gallery->links() }}
+  </div>
+</div>
+
 
         {{-- Desktop View --}}
         <div class="hidden md:block overflow-x-auto">

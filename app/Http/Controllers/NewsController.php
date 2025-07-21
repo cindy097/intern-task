@@ -85,7 +85,11 @@ public function index(Request $request)
 
         return redirect()->route('admin.news.index')->with('success', 'Berita berhasil diperbarui.');
     }
-
+public function show($id)
+{
+    $news = News::with('category')->findOrFail($id); // Ambil berita berdasarkan ID + kategori
+    return view('berita.show', compact('news')); // Kirim ke file show.blade.php
+}
     public function destroy(News $news)
     {
         if ($news->image && file_exists(storage_path('app/public/' . $news->image))) {

@@ -36,21 +36,21 @@
             <div class="w-14 h-14 mx-auto rounded-full bg-black flex items-center justify-center mb-3">
               <img src="{{ asset('img/mail.png') }}" alt="Email Icon" class="w-[25px]" />
             </div>
-            <p class="font-bold text-sm mb-1">EMAIL</p>
+            <p class="font-bold text-sm mb-[-15px]">EMAIL</p>
             <p class="text-sm text-gray-800">{{ $contact->email }}</p>
           </div>
           <div>
             <div class="w-14 h-14 mx-auto rounded-full bg-black flex items-center justify-center mb-3">
               <img src="{{ asset('img/call.png') }}" alt="Phone Icon" class="w-[20px]" />
             </div>
-            <p class="font-bold text-sm mb-1">PHONE</p>
+            <p class="font-bold text-sm mb-[-15px]">PHONE</p>
             <p class="text-sm text-gray-800">{{ $contact->phone }}</p>
           </div>
           <div>
             <div class="w-14 h-14 mx-auto rounded-full bg-black flex items-center justify-center mb-3">
               <img src="{{ asset('img/loc.png') }}" alt="Location Icon" class="w-4" />
             </div>
-            <p class="font-bold text-sm mb-1">LOCATION</p>
+            <p class="font-bold text-sm mb-[-15px]">LOCATION</p>
             <p class="text-sm text-gray-800">{{ $contact->address }}</p>
           </div>
         </div>

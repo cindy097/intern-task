@@ -23,7 +23,7 @@
 <!-- Sidebar Mobile -->
 <div id="mobileMenu" class="fixed top-0 left-0 h-full w-64 bg-white/95 backdrop-blur-md shadow-lg transform -translate-x-full transition-transform duration-300 ease-in-out z-50 md:hidden flex flex-col text-black">
   <div class="flex justify-between items-center px-6 py-4 border-b">
-    <h2 class="font-bold text-lg">MENU</h2>
+    <h2 class="font-bold text-lg">TASTY FOOD</h2>
     <button onclick="toggleMenu()" class="text-2xl">
       <ion-icon name="close-outline"></ion-icon>
     </button>

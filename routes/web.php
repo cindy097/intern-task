@@ -24,7 +24,7 @@ Route::get('/berita', [BeritaController::class, 'index'])->name('berita');
 Route::get('/galeri', [GaleriController::class, 'index'])->name('galeri');
 Route::get('/kontak', [ContactController::class, 'showPublic'])->name('kontak');
 Route::post('/kontak', [MessageController::class, 'store'])->name('messages.store');
-
+Route::get('/berita/{id}', [App\Http\Controllers\NewsController::class, 'show'])->name('berita.show');
 /*
 |--------------------------------------------------------------------------
 | Route untuk Auth (Login & Register)

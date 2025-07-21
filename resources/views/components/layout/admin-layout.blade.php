@@ -6,12 +6,17 @@
   <title>{{ $title ?? 'Dashboard' }}</title>
   @vite('resources/css/app.css')
   <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body class="bg-gray-50 text-gray-800 h-screen overflow-hidden">
 
   <!-- Mobile Navbar -->
   <nav class="flex justify-between items-center px-4 py-4 bg-white border-b shadow md:hidden">
-    <h1 class="font-bold text-xl">TASTY FOOD</h1>
+    <a href="{{ url('/') }}" target="_blank" rel="noopener noreferrer">
+      <div class="font-bold text-xl hover:underline cursor-pointer">
+        <h1>TASTY FOOD</h1>
+      </div>
+    </a>
     <button onclick="toggleSidebar()" class="text-3xl">
       <ion-icon name="menu-outline"></ion-icon>
     </button>
@@ -29,5 +34,6 @@
       </div>
     </main>
   </div>
+  @stack('scripts')
 </body>
 </html>
