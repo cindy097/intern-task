@@ -12,7 +12,6 @@ use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\MessageController;
-
 /*
 |--------------------------------------------------------------------------
 | Route untuk Public (User)

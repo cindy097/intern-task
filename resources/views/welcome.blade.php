@@ -53,7 +53,7 @@
 <section class="relative min-h-[665px] overflow-hidden px-4 md:px-10 lg:px-10 xl:px-10 pt-[130px]">
   <img src="{{ asset('img/1.png') }}" alt="Healthy Food"
        class="absolute z-0 pointer-events-none transition-all duration-500 ease-in-out
-              w-[140px] top-8 right-[20px]
+              w-[140px] top-8 right-[10px]
               sm:w-[180px] sm:top-[-85] sm:right-[60px]
               md:w-[355px] md:top-[-85px] md:right-[-100px] md:left-auto
               lg:w-[500px] lg:top-[-100px] lg:right-[-120px] lg:left-auto

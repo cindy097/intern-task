@@ -1,6 +1,6 @@
-  <!-- Navbar -->
-<nav class="absolute top-0 left-0 w-full z-50 py-6">
-  <div class="max-w-7xl mx-auto px-4 md:px-10 lg:px-10 xl:px-10 flex justify-between items-center">
+<!-- Navbar -->
+<nav class="absolute top-0 left-0 w-full z-50 py-6 px-4 md:px-10 lg:px-10 xl:px-10">
+  <div class="max-w-7xl mx-auto flex justify-between items-center">
     <!-- Logo -->
     <h1 class="font-bold text-xl text-white">TASTY FOOD</h1>
 
