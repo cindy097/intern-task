@@ -20,8 +20,8 @@
     <button onclick="toggleMenu()" class="text-3xl md:hidden text-black">
       <ion-icon name="menu-outline"></ion-icon>
     </button>
-    <h1 class="font-bold text-xl text-black">TASTY FOOD</h1>
-    <ul class="hidden md:flex space-x-6 text-sm font-medium text-black">
+    <h1 class="font-bold text-xl text-black leading-none mb-[7px]">TASTY FOOD</h1>
+    <ul class="hidden md:flex space-x-6 text-sm font-medium text-black mb-[7px]">
       <li><a href="{{ url('/') }}" class="hover:text-gray-500">HOME</a></li>
       <li><a href="{{ route('tentang') }}" class="hover:text-gray-500">TENTANG</a></li>
       <li><a href="{{ route('berita') }}" class="hover:text-gray-500">BERITA</a></li>
@@ -127,25 +127,27 @@
     <!-- Container Responsive -->
     <div class="flex flex-col lg:flex-row gap-8">
       <!-- Berita Utama -->
+<!-- Berita Utama -->
 <div class="w-full lg:w-1/2">
   @if($berita->count() > 0)
   @php $utama = $berita->first(); @endphp
-  <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:scale-[1.02] transition-transform duration-300">
+  <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:scale-[1.02] transition-transform duration-300 flex flex-col h-full">
     <img src="{{ asset('storage/' . $utama->image) }}" alt="{{ $utama->title }}"
-         class="w-full h-[240px] md:h-[280px] lg:h-[370px] object-cover">
-    <div class="p-4 sm:p-6">
-      <h3 class="text-xl md:text-2xl font-bold mb-2 uppercase">{{ $utama->title }}</h3>
-      <p class="text-gray-600 text-sm md:text-base leading-relaxed mb-3">
-        {{ \Illuminate\Support\Str::limit($utama->content, 100) }}
-      </p>
-      <a href="{{ route('berita.show', $utama->id) }}" class="text-sm text-yellow-500 hover:text-yellow-600 hover:underline transition-all duration-300 active:scale-95">
+         class="w-full h-[137.9px] lg:h-[370px] object-cover"> <!-- Match tinggi mini di mobile -->
+    <div class="p-3 sm:p-4 lg:p-6 flex flex-col justify-between flex-grow">
+      <div>
+        <h3 class="text-sm font-bold mb-1 uppercase lg:text-2xl">{{ $utama->title }}</h3> <!-- kecilkan untuk mobile -->
+        <p class="text-gray-600 text-xs leading-snug mb-2 lg:text-base lg:leading-relaxed">
+          {{ \Illuminate\Support\Str::limit($utama->content, 80) }} <!-- samakan limit dengan mini -->
+        </p>
+      </div>
+      <a href="{{ route('berita.show', $utama->id) }}" class="text-xs text-yellow-500 hover:text-yellow-600 hover:underline active:scale-95 transition-all mt-auto">
         Baca selengkapnya
       </a>
     </div>
   </div>
   @endif
 </div>
-
 
 <!-- Grid Mini Berita -->
 <div class="w-full lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-6 items-start">

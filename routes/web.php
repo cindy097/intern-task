@@ -58,3 +58,6 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::get('messages', [MessageController::class, 'index'])->name('messages.index');
     Route::delete('messages/{id}', [MessageController::class, 'destroy'])->name('messages.destroy');
 });
+Route::get('/berita-json', [BeritaController::class, 'json'])->name('berita.json');
+Route::get('/galeri-json', [App\Http\Controllers\GaleriController::class, 'json'])->name('galeri.json');
+

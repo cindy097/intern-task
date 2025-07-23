@@ -40,18 +40,65 @@
     </div>
   </section>
 
-  <!-- Mini Gallery -->
-  <section id="galeri" class="bg-white py-12">
-    <div class="max-w-7xl mx-auto px-4 md:px-10">
-      <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
-        @foreach ($galeri as $item)
-          <div class="aspect-square rounded-xl overflow-hidden shadow hover:scale-105 transition-transform duration-300">
-            <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->title ?? 'Foto' }}" class="w-full h-full object-cover" />
-          </div>
-        @endforeach
-      </div>
+<!-- Mini Gallery -->
+<section id="galeri" class="bg-white py-12">
+  <div class="max-w-7xl mx-auto px-4 md:px-10">
+
+    @php
+      $isMobile = request()->header('User-Agent') && preg_match('/mobile/i', request()->header('User-Agent'));
+      $limit = $isMobile ? 6 : 8;
+    @endphp
+
+    <div id="galeri-list" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
+      @foreach ($galeri as $item)
+        <div class="aspect-square rounded-xl overflow-hidden shadow hover:scale-105 transition-transform duration-300">
+          <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->title ?? 'Foto' }}" class="w-full h-full object-cover" />
+        </div>
+      @endforeach
     </div>
-  </section>
+
+    <div class="text-center mt-8">
+      <button id="loadMoreGaleriBtn" class="mt-6 px-6 py-3 bg-black text-white font-semibold hover:scale-105 transition-transform uppercase">Lihat Lebih Banyak</button>
+    </div>
+  </div>
+</section>
+
+<!-- Script Load More -->
+<script>
+  const galeriList = document.getElementById('galeri-list');
+  const loadMoreGaleriBtn = document.getElementById('loadMoreGaleriBtn');
+
+  const isMobile = /mobile/i.test(navigator.userAgent);
+  const limit = isMobile ? 6 : 8;
+  let offset = {{ $initialLimit ?? $limit }};
+
+  loadMoreGaleriBtn.addEventListener('click', function () {
+    loadMoreGaleriBtn.innerText = 'Memuat...';
+
+    fetch(`{{ route('galeri.json') }}?offset=${offset}&limit=${limit}`)
+      .then(res => res.json())
+      .then(data => {
+        if (data.length > 0) {
+          data.forEach(item => {
+            const el = `
+              <div class="aspect-square rounded-xl overflow-hidden shadow hover:scale-105 transition-transform duration-300">
+                <img src="/storage/${item.image}" alt="${item.title ?? 'Foto'}" class="w-full h-full object-cover" />
+              </div>
+            `;
+            galeriList.insertAdjacentHTML('beforeend', el);
+          });
+          offset += data.length;
+          loadMoreGaleriBtn.innerText = 'Lihat Lebih Banyak';
+        } else {
+          loadMoreGaleriBtn.innerText = 'Tidak ada lagi foto';
+          loadMoreGaleriBtn.disabled = true;
+        }
+      })
+      .catch(() => {
+        loadMoreGaleriBtn.innerText = 'Gagal memuat';
+      });
+  });
+</script>
 
   <!-- Minimal CSS to override swiper-pagination position -->
 <style>
