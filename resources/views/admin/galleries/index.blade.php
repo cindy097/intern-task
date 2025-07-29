@@ -24,8 +24,8 @@
     <div class="border rounded-lg p-4 bg-gray-50 shadow-sm">
       <h3 class="text-lg font-bold mb-2">{{ $slideshow->title }}</h3>
       <img src="{{ asset('storage/' . $slideshow->image) }}" class="w-full h-40 object-cover rounded mb-3">
-      <div class="flex justify-end items-center gap-3">
-        <a href="{{ route('admin.slideshows.edit', $slideshow->id) }}" class="text-blue-600 text-sm hover:underline font-medium">Edit</a>
+      <div class="flex justify-end items-center gap-3 flex-wrap">
+        <a href="{{ route('admin.slideshows.edit', $slideshow->id) }}" class="text-blue-600 text-sm font-medium hover:underline">Edit</a>
         <form action="{{ route('admin.slideshows.destroy', $slideshow->id) }}" method="POST" onsubmit="return confirm('Yakin hapus slideshow ini?')">
           @csrf
           @method('DELETE')
@@ -104,7 +104,7 @@
     <div class="border rounded-lg p-4 bg-gray-50 shadow-sm">
       <h3 class="text-lg font-bold mb-2">{{ $item->title }}</h3>
       <img src="{{ asset('storage/' . $item->image) }}" class="w-full h-40 object-cover rounded mb-3">
-      <div class="flex justify-end items-center gap-3">
+      <div class="flex justify-end items-center gap-3 flex-wrap">
         <a href="{{ route('admin.galleries.edit', $item->id) }}" class="text-blue-600 text-sm hover:underline font-medium">Edit</a>
         <form action="{{ route('admin.galleries.destroy', $item->id) }}" method="POST" onsubmit="return confirm('Yakin hapus galeri ini?')">
           @csrf @method('DELETE')

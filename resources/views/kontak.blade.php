@@ -63,7 +63,7 @@
     <div class="max-w-7xl mx-auto w-full">
       <div class="px-4 md:px-10 lg:px-10 xl:px-10">
         <div class="rounded-xl overflow-hidden shadow-md">
-          <div class="relative h-[400px] w-full">
+          <div class="relative h-[460px] w-full">
             <iframe
               width="100%"
               height="100%"

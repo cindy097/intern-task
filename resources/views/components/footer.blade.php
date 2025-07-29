@@ -18,7 +18,7 @@
       <ul class="space-y-2 text-sm">
         <li><a href="#" class="hover:underline">Blog</a></li>
         <li><a href="#" class="hover:underline">Hewan</a></li>
-        <li><a href="#" class="hover:underline">Galeri</a></li>
+        <li><a href="{{ route('galeri') }}" class="hover:underline">Galeri</a></li>
         <li><a href="#" class="hover:underline">Testimonial</a></li>
       </ul>
     </div>
@@ -28,8 +28,8 @@
       <h3 class="font-semibold text-lg mb-4">Privacy</h3>
       <ul class="space-y-2 text-sm">
         <li><a href="#" class="hover:underline">Karir</a></li>
-        <li><a href="#" class="hover:underline">Tentang Kami</a></li>
-        <li><a href="#" class="hover:underline">Kontak Kami</a></li>
+        <li><a href="{{ route('tentang') }}" class="hover:underline">Tentang Kami</a></li>
+        <li><a href="{{ route('kontak') }}" class="hover:underline">Kontak Kami</a></li>
         <li><a href="#" class="hover:underline">Servis</a></li>
       </ul>
     </div>
