@@ -46,7 +46,7 @@
 
     @php
       $isMobile = request()->header('User-Agent') && preg_match('/mobile/i', request()->header('User-Agent'));
-      $limit = $isMobile ? 6 : 8;
+      $limit = $isMobile ? 6 : 12;
     @endphp
 
     <div id="galeri-list" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
@@ -69,7 +69,7 @@
   const loadMoreGaleriBtn = document.getElementById('loadMoreGaleriBtn');
 
   const isMobile = /mobile/i.test(navigator.userAgent);
-  const limit = isMobile ? 6 : 8;
+  const limit = isMobile ? 6 : 12;
   let offset = {{ $initialLimit ?? $limit }};
 
   loadMoreGaleriBtn.addEventListener('click', function () {

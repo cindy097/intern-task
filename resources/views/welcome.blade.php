@@ -50,7 +50,7 @@
 </div>
 
 <!-- Jumbotron -->
-<section class="relative min-h-[665px] overflow-hidden px-4 md:px-10 lg:px-10 xl:px-10 pt-[130px]">
+<section class="relative h-[550px] overflow-hidden px-4 md:px-10 lg:px-10 xl:px-10 pt-[130px]">
   <img src="{{ asset('img/1.png') }}" alt="Healthy Food"
        class="absolute z-0 pointer-events-none transition-all duration-500 ease-in-out
               w-[140px] top-8 right-[10px]
@@ -86,7 +86,7 @@
 <!-- Card Makanan -->
 <section class="bg-cover bg-center py-24 px-4 md:px-10 lg:px-10 xl:px-10" style="background-image: url('img/bg-card.png');">
   <div class="max-w-7xl mx-auto">
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10 sm:gap-y-16">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-6 sm:gap-y-16">
       
       <!-- Card 1 -->
       <div class="bg-white rounded-2xl shadow-xl p-4 pt-12 lg:pt-16 text-center relative overflow-visible transition-transform duration-300 hover:scale-105 mx-auto mt-[70px] sm:mt-0">
@@ -125,16 +125,15 @@
     <h2 class="text-3xl font-bold mb-8 text-center">BERITA TERBARU</h2>
 
     <!-- Container Responsive -->
-    <div class="flex flex-col lg:flex-row gap-8">
-      <!-- Berita Utama -->
+    <div class="flex flex-col lg:flex-row gap-6">
 <!-- Berita Utama -->
 <div class="w-full lg:w-1/2">
   @if($berita->count() > 0)
   @php $utama = $berita->first(); @endphp
   <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:scale-[1.02] transition-transform duration-300 flex flex-col h-full">
     <img src="{{ asset('storage/' . $utama->image) }}" alt="{{ $utama->title }}"
-         class="w-full h-[137.9px] lg:h-[370px] object-cover"> <!-- Match tinggi mini di mobile -->
-    <div class="p-3 sm:p-4 lg:p-6 flex flex-col justify-between flex-grow">
+     class="w-full h-[137.9px] md:h-[200px] lg:h-[370px] object-cover"> <!-- Match tinggi mini di mobile -->
+    <div class="p-3 lg:p-6 flex flex-col justify-between flex-grow">
       <div>
         <h3 class="text-sm font-bold mb-1 uppercase lg:text-2xl">{{ $utama->title }}</h3> <!-- kecilkan untuk mobile -->
         <p class="text-gray-600 text-xs leading-snug mb-2 lg:text-base lg:leading-relaxed">
