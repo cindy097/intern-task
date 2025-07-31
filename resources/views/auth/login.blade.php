@@ -26,8 +26,13 @@
         </div>
 
         <div class="flex items-center mb-4">
-            <input type="checkbox" name="remember" id="remember" class="mr-2">
-            <label for="remember" class="text-sm text-slate-700">Ingat saya</label>
+        <input 
+        type="checkbox" 
+        name="remember" 
+        id="remember" 
+        class="mr-2 accent-yellow-300 checked:text-black checked:bg-yellow-300 checked:border-yellow-300"
+        >
+        <label for="remember" class="mb-[3px] text-sm text-slate-700">Ingat saya</label>
         </div>
 
         @if (session('error'))
