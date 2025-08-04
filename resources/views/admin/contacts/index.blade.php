@@ -1,7 +1,5 @@
 <x-layout.admin-layout>
-  <div class="max-w-4xl mx-auto px-4 md:px-10 py-10">
-    <h1 class="text-2xl font-bold mb-6">Informasi Kontak</h1>
-
+  <div class="max-w-4xl mx-auto">
     @if (session('success'))
       <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-6">
         {{ session('success') }}
@@ -11,7 +9,7 @@
     <form action="{{ route('admin.contacts.update', $contact) }}" method="POST" class="bg-white shadow rounded-lg p-6">
       @csrf
       @method('PUT')
-
+    <h1 class="text-2xl font-bold mb-6">Informasi Kontak</h1>
       <div class="mb-4">
         <label class="block font-medium mb-1">Email</label>
         <input type="email" name="email" value="{{ old('email', $contact->email) }}"

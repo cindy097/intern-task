@@ -1,5 +1,5 @@
 <x-layout.admin-layout>
-  <div class="p-4">
+  <div>
     <div class="bg-white rounded-lg shadow p-6">
 
       {{-- === SLIDESHOW SECTION === --}}

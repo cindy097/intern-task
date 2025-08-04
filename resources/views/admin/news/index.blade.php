@@ -1,6 +1,6 @@
 <x-layout.admin-layout>
-  <div class="p-4">
-    <div class="bg-white rounded-lg shadow p-6">
+  <div>
+    <div class="bg-white rounded-lg shadow p-4">
       
       <!-- Header -->
       <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-3 sm:gap-0">
